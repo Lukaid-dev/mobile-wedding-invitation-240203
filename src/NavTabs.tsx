@@ -39,7 +39,7 @@ export function NavTabs() {
   }, [location.pathname]);
 
   return (
-    <nav className="h-[2rem]">
+    <nav className="relative h-[2rem]">
       <ul className="flex justify-center align-middle">
         {navList.map((item) => (
           <li

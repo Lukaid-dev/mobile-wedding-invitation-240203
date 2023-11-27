@@ -30,17 +30,20 @@ export default function Home() {
       >
         <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-white to-transparent"></div>
 
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white"></div>
-        <div className="absolute flex flex-col justify-center items-center bottom-0">
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-white"></div>
+        <div className="absolute flex flex-col justify-center items-center bottom-0 w-full">
           <span className="text-xl">성우와 예주</span>
           <span className="text-center">
             부부라는 이름으로 서로의 곁에서
             <br />
             언제나 함께 하겠습니다
           </span>
-          <button>
-            <Link to="/Invitation">Invitation</Link>
-          </button>
+          <Link
+            to="/Invitation"
+            className="flex justify-center bg-orange-400 w-[80%] rounded-full py-2 my-2 text-white font-bold"
+          >
+            Invitation
+          </Link>
         </div>
       </div>
     </>
