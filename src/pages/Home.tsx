@@ -24,11 +24,15 @@ export default function Home() {
       <div
         className="relative flex flex-col justify-center items-center animate-fadeInOut bg-cover bg-center"
         style={{
-          backgroundImage: "url('src/assets/images/image_test.png')",
+          backgroundImage: "url('src/assets/images/image_test_3.png')",
           height: `${height}px`,
         }}
       >
-        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-white to-transparent"></div>
+        <span className="text-2xl text-center text-white">
+          SeongWoo <br /> & <br /> Yeju
+        </span>
+
+        <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-white to-transparent"></div>
 
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-white"></div>
         <div className="absolute flex flex-col justify-center items-center bottom-0 w-full">
