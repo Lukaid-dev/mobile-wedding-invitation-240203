@@ -46,7 +46,7 @@ export default function Home() {
             to="/Invitation"
             className="flex justify-center bg-orange-400 w-[80%] rounded-full py-2 my-2 text-white font-bold"
           >
-            Invitation
+            청첩장 보러가기
           </Link>
         </div>
       </div>

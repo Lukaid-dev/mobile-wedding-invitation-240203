@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* styles.css */
-
-body {
-  font-family: "Noto Sans", sans-serif;
-}
-
 @keyframes fadeInOut {
   0% {
     opacity: 0;
