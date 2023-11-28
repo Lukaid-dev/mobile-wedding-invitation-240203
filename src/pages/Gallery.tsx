@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export default function Gallery() {
   return (
     <>
-      <div className="flex flex-col justify-center items-center animate-fadeInOut">
+      <div className="animate-fadeInOut flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold underline"> GALLEY </h1>
         <h1 className="text-3xl font-bold underline"> GALLEY </h1>
         <h1 className="text-3xl font-bold underline"> GALLEY </h1>
@@ -34,8 +34,7 @@ export default function Gallery() {
       </div>
       <Link
         to="/Guestbook"
-        className="flex justify-center bg-orange-400 w-[80%] rounded-full py-2 my-2 text-white font-bold"
-      >
+        className="my-2 flex w-[80%] justify-center rounded-full bg-orange-400 py-2 font-bold text-white">
         GuestBook
       </Link>
     </>

@@ -1,9 +1,9 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { RouterContextInterface, RouterContextEnum } from "../types";
-import { useLocation } from "react-router-dom";
+import { createContext, useContext, useEffect, useState } from 'react';
+import { RouterContextInterface, RouterContextEnum } from '../types';
+import { useLocation } from 'react-router-dom';
 
 const RouterContext = createContext<RouterContextInterface>(
-  {} as RouterContextInterface
+  {} as RouterContextInterface,
 );
 
 export const RouterProvider = ({
@@ -14,7 +14,7 @@ export const RouterProvider = ({
   const location = useLocation();
 
   const [router, setRouter] = useState<RouterContextEnum>(
-    RouterContextEnum.Home
+    RouterContextEnum.Home,
   );
 
   function updateRouter(router: RouterContextEnum) {
@@ -23,7 +23,7 @@ export const RouterProvider = ({
 
   useEffect(() => {
     setRouter(
-      RouterContextEnum[location.pathname.slice(1) as RouterContextEnum]
+      RouterContextEnum[location.pathname.slice(1) as RouterContextEnum],
     );
     console.log(location.pathname.slice(1));
   }, [location]);
@@ -33,8 +33,7 @@ export const RouterProvider = ({
       value={{
         router: router,
         updateRouter: updateRouter,
-      }}
-    >
+      }}>
       {children}
     </RouterContext.Provider>
   );
