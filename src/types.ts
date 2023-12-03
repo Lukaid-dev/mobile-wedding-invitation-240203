@@ -5,6 +5,15 @@ export enum RouterContextEnum {
   GuestBook = 'GuestBook',
 }
 
+export enum GBReturnCode {
+  Success = 'Success',
+  NameEmpty = 'NameEmpty',
+  PwEmpty = 'PwEmpty',
+  PwInvalid = 'PwInvalid',
+  TextEmpty = 'TextEmpty',
+  NetworkError = 'NetworkError',
+}
+
 export interface RouterContextInterface {
   router: RouterContextEnum;
   updateRouter: (router: RouterContextEnum) => void;
@@ -13,4 +22,14 @@ export interface RouterContextInterface {
 export interface INavItem {
   url: string;
   title: string;
+}
+
+export interface GuestBookEntry {
+  name: string;
+  pw: string;
+  text: string;
+}
+
+export interface GuestBookEntryWithSalt extends GuestBookEntry {
+  salt: string;
 }
