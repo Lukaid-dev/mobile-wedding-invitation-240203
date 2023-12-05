@@ -28,8 +28,7 @@ export interface GuestBookEntry {
   name: string;
   pw: string;
   text: string;
-}
-
-export interface GuestBookEntryWithSalt extends GuestBookEntry {
   salt: string;
+  createdAt: string;
+  deletedAt?: string;
 }

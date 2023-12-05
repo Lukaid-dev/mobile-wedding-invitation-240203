@@ -1,5 +1,5 @@
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
-import { GuestBookEntry, GuestBookEntryWithSalt, GBReturnCode } from './types';
+import { GuestBookEntry, GBReturnCode } from './types';
 
 import CryptoJS, { SHA256, enc } from 'crypto-js';
 
@@ -29,7 +29,16 @@ export const getGuestBookEntries = async (): Promise<GuestBookEntry[]> => {
   const db = getFirestore();
   const guestbookCollection = collection(db, 'GuestBook');
   const querySnapshot = await getDocs(guestbookCollection);
-  const entries = querySnapshot.docs.map((doc) => doc.data() as GuestBookEntry);
+  const entries = querySnapshot.docs
+    .map((doc) => doc.data() as GuestBookEntry)
+    .sort((a, b) => {
+      if (a.createdAt && b.createdAt) {
+        return b.createdAt.localeCompare(a.createdAt);
+      } else {
+        return 0;
+      }
+    });
+  // sort by createdAt
   return entries;
 };
 
@@ -44,20 +53,21 @@ export const postGuestBookEntry = async (
     return GBReturnCode.PwEmpty;
   }
 
+  if (entry.pw.trim().length !== 4) {
+    return GBReturnCode.PwInvalid;
+  }
+
   if (!entry.text) {
     return GBReturnCode.TextEmpty;
   }
 
-  if (entry.pw.length < 4) {
-    return GBReturnCode.PwInvalid;
-  }
-
   const { hashedPassword, salt } = generatePassword(entry.pw);
 
-  const entryWithHashedPassword: GuestBookEntryWithSalt = {
+  const entryWithHashedPassword: GuestBookEntry = {
     ...entry,
     pw: hashedPassword,
     salt,
+    createdAt: new Date().toISOString(),
   };
 
   const db = getFirestore();
