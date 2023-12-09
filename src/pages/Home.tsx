@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
+import NextButton from '../components/nextButton';
 
 export default function Home() {
   const [height, setHeight] = useState(window.innerHeight);
@@ -38,16 +39,12 @@ export default function Home() {
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-white"></div>
         <div className="absolute bottom-0 flex w-full flex-col items-center justify-center">
           <span className="text-xl">성우와 예주</span>
-          <span className="text-center">
+          <span className="text-center font-myeongjo">
             부부라는 이름으로 서로의 곁에서
             <br />
             언제나 함께 하겠습니다
           </span>
-          <Link
-            to="/Invitation"
-            className="my-2 flex w-[80%] justify-center rounded-full bg-orange-400 py-2 font-bold text-white">
-            청첩장 보러가기
-          </Link>
+          <NextButton to="/Invitation" text="청첩장 보러가기" />
         </div>
       </div>
     </>

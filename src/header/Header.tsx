@@ -1,7 +1,12 @@
+import { NavTabs } from './NavTabs';
+
 export default function Header() {
   return (
-    <header className="flex h-[2rem] justify-center border-b-2 align-middle">
-      <h1 className="text-lg font-bold">이성우 ❤️ 최예주</h1>
-    </header>
+    <div className="flex flex-col">
+      <header className="my-1 flex h-[2rem] w-full items-center justify-center">
+        <div className=""> 성우 ❤️ 예주 </div>
+      </header>
+      <NavTabs />
+    </div>
   );
 }
