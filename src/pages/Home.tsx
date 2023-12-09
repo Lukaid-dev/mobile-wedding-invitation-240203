@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 export default function Home() {
   const [height, setHeight] = useState(window.innerHeight);
+
+  const url = useLoaderData() as string;
 
   useEffect(() => {
     const updateHeight = () => {
@@ -24,7 +26,7 @@ export default function Home() {
       <div
         className="animate-fadeInOut relative flex flex-col items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage: "url('src/assets/images/image_test_3.png')",
+          backgroundImage: `url(${url})`,
           height: `${height}px`,
         }}>
         <span className="text-center text-2xl text-white">

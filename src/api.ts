@@ -16,6 +16,7 @@ const generatePassword = (
   return { hashedPassword, salt };
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const checkPassword = (
   password: string,
   salt: string,

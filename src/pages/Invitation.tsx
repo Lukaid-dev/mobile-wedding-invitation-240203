@@ -1,10 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { IoCall } from 'react-icons/io5';
 import { AiOutlineMessage } from 'react-icons/ai';
 import { useEffect, useRef } from 'react';
 
 export default function Invitation() {
   const mapElement = useRef<HTMLDivElement>(null);
+
+  const url = useLoaderData() as string;
 
   useEffect(() => {
     if (!mapElement.current) return;
@@ -70,7 +72,7 @@ export default function Invitation() {
         <div
           className="my-10 flex w-full items-center justify-center bg-cover bg-center text-white"
           style={{
-            backgroundImage: "url('src/assets/images/image_test.png')",
+            backgroundImage: `url(${url})`,
             height: '120px',
           }}>
           소중한 당신을 초대합니다
