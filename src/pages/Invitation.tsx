@@ -36,8 +36,8 @@ export default function Invitation() {
     <>
       <div className="animate-fadeInOut flex flex-col items-center justify-center">
         <div className="w-[80%] pt-5 text-start">
-          <h1 className="pb-10 font-myeongjo text-3xl font-bold">인 사 말</h1>
-          <div className="flex flex-col gap-8 text-start font-myeongjo">
+          <h1 className="pb-10 font-batang text-3xl font-bold">인 사 말</h1>
+          <div className="flex flex-col gap-8 text-start font-batang">
             <span>
               마음을 같이하여 같은 사랑을 가지고 <br />
               뜻을 합하여 한마음을 품어 <br />- 빌립보서 2장 2절 -
@@ -57,12 +57,12 @@ export default function Invitation() {
         {/* 여기 디자인 다시 */}
         <div className="mt-10 w-full">
           <div className="flex justify-center">
-            <div className="w-[120px] text-center font-myeongjo">문일순</div>
+            <div className="w-[120px] text-center font-batang">문일순</div>
             <div className="mr-2">의 장남</div>
             <div>성우</div>
           </div>
           <div className="flex justify-center">
-            <div className="w-[120px] text-center font-myeongjo">
+            <div className="w-[120px] text-center font-batang">
               최상철 · 박경순
             </div>
             <div className="mr-2">의 장녀</div>

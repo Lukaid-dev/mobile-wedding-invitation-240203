@@ -4,9 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Noto Sans KR'],
-        myeongjo: ['Nanum Myeongjo'],
-        gothic: ['Nanum Gothic'],
+        sans: ['Pretendard'],
         batang: ['Gowun Batang'],
       },
     },
