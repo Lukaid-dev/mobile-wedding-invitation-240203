@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { INavItem } from './types';
+import { INavItem } from '../types';
 
 const navList: INavItem[] = [
   {
@@ -49,7 +49,9 @@ export function NavTabs() {
                 : 'text-gray-500'
             } w-[25%]`}
             key={item.title}>
-            <Link to={item.url}>{item.title}</Link>
+            <Link to={item.url} className="w-full text-center">
+              {item.title}
+            </Link>
           </li>
         ))}
       </ul>

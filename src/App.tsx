@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import './App.css';
-import { NavTabs } from './NavTabs';
-import Header from './pages/Header';
+import { NavTabs } from './header/NavTabs';
+import Header from './header/Header';
 
 function App() {
   return (
