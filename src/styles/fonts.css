@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('./fonts/NotoSansKR-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('./fonts/NotoSansKR-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gowun Batang';
+  src: url('./fonts/GowunBatang-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gowun Batang';
+  src: url('./fonts/GowunBatang-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  src: url('./fonts/NanumGothic-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  src: url('./fonts/NanumGothic-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  src: url('./fonts/NanumMyeongjo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nanum Myeongjo';
+  src: url('./fonts/NanumMyeongjo-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}

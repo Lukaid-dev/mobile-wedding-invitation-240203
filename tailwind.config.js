@@ -2,10 +2,13 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    fontFamily: {
-      sans: ['Noto Sans Korean'],
-      myeongjo: ['Nanum Myeongjo'],
-      gothic: ['Nanum Gothic'],
+    extend: {
+      fontFamily: {
+        sans: ['Noto Sans KR'],
+        myeongjo: ['Nanum Myeongjo'],
+        gothic: ['Nanum Gothic'],
+        batang: ['Gowun Batang'],
+      },
     },
   },
   plugins: [],

@@ -1,0 +1,29 @@
+@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(+20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInOut {
+  animation: fadeInOut 0.5s ease-in-out; /* 원하는 지속 시간 및 타이밍 함수 사용 */
+}
+
+.bg-blur {
+  position: absolute;
+  inset: 0;
+  background: inherit; /* Inherit the background color of the parent */
+  filter: blur(10px); /* Adjust the blur strength as needed */
+  animation: blurInOut 0.5s ease-in-out; /* Adjust the duration and timing function as needed */
+  z-index: -1; /* Place the blur layer behind the content */
+}

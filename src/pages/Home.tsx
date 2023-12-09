@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import NextButton from '../components/nextButton';
+import NextButton from '../components/NextButton';
 
 export default function Home() {
   const [height, setHeight] = useState(window.innerHeight);
@@ -30,16 +30,16 @@ export default function Home() {
           backgroundImage: `url(${url})`,
           height: `${height}px`,
         }}>
-        <span className="text-center text-2xl text-white">
-          SeongWoo <br /> & <br /> Yeju
+        <span className="text-center font-batang text-2xl text-white">
+          SeongWoo & Yeju
         </span>
 
         <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-white to-transparent"></div>
 
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-white"></div>
         <div className="absolute bottom-0 flex w-full flex-col items-center justify-center">
-          <span className="text-xl">성우와 예주</span>
-          <span className="text-center font-myeongjo">
+          <span className="font-batang text-xl">성우와 예주</span>
+          <span className="text-center font-batang">
             부부라는 이름으로 서로의 곁에서
             <br />
             언제나 함께 하겠습니다
