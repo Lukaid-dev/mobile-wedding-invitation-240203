@@ -1,5 +1,6 @@
-import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
+import { collection, getDocs, addDoc } from 'firebase/firestore';
 import { GuestBookEntry, GBReturnCode } from './types';
+import { db } from './firebase';
 
 import CryptoJS, { SHA256, enc } from 'crypto-js';
 
@@ -27,7 +28,6 @@ const checkPassword = (
 };
 
 export const getGuestBookEntries = async (): Promise<GuestBookEntry[]> => {
-  const db = getFirestore();
   const guestbookCollection = collection(db, 'GuestBook');
   const querySnapshot = await getDocs(guestbookCollection);
   const entries = querySnapshot.docs
@@ -71,7 +71,6 @@ export const postGuestBookEntry = async (
     createdAt: new Date().toISOString(),
   };
 
-  const db = getFirestore();
   const guestbookCollection = collection(db, 'GuestBook');
   const res = await addDoc(guestbookCollection, entryWithHashedPassword);
   if (res) {

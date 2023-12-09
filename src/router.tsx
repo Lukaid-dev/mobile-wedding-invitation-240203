@@ -5,15 +5,8 @@ import App from './App';
 import Invitation from './pages/Invitation';
 import Gallery from './pages/Gallery';
 import NotFound from './pages/NotFound';
-
-import { initializeApp } from 'firebase/app';
-import firebaseConfig from './firebaseConfig';
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const app = initializeApp(firebaseConfig);
-
-import { getStorage, ref, getDownloadURL } from 'firebase/storage';
-const storage = getStorage();
+import { storage } from './firebase';
+import { getDownloadURL, ref } from 'firebase/storage';
 
 export const router = createBrowserRouter([
   {
