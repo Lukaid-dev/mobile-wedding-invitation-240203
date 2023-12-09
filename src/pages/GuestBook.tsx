@@ -1,8 +1,9 @@
 import { DocumentData } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { GuestBookEntry, GBReturnCode } from '../types';
 import { getGuestBookEntries, postGuestBookEntry } from '../api';
 import { FaXmark } from 'react-icons/fa6';
+import DeleteModal from '../components/DeleteModal';
 
 export default function GuestBook() {
   const [guestbookEntries, setGuestbookEntries] = useState<DocumentData>([]);
@@ -13,6 +14,24 @@ export default function GuestBook() {
     salt: '',
     createdAt: '',
   });
+  const [modalOpen, setModalOpen] = useState(false);
+  const [guestbookEntryId, setGuestbookEntryId] = useState('');
+  const modalOverlayRef = useRef<HTMLDivElement>(null);
+
+  const openModal = (id: string) => {
+    setGuestbookEntryId(id);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const modalOutsideClick = (arg: React.MouseEvent<HTMLDivElement>) => {
+    if (arg.target === modalOverlayRef.current) {
+      closeModal();
+    }
+  };
 
   useEffect(() => {
     const fetchGuestbookEntries = async () => {
@@ -99,7 +118,7 @@ export default function GuestBook() {
                   </span>
                   <div
                     onClick={() => {
-                      alert('삭제되었습니다.');
+                      openModal(entries.salt);
                     }}>
                     <FaXmark />
                   </div>
@@ -112,6 +131,14 @@ export default function GuestBook() {
           </li>
         ))}
       </ul>
+      {modalOpen && (
+        <DeleteModal
+          modalOverlayRef={modalOverlayRef}
+          closeModal={closeModal}
+          modalOutsideClick={modalOutsideClick}
+          guestbookEntryId={guestbookEntryId}
+        />
+      )}
     </div>
   );
 }
