@@ -40,13 +40,13 @@ export function NavTabs() {
 
   return (
     <nav className="relative h-[2rem]">
-      <ul className="flex items-center justify-center">
+      <ul className="flex items-center justify-center border-b-2 border-white">
         {navList.map((item) => (
           <li
             className={`relative flex cursor-pointer items-center justify-center ${
               item.url === location.pathname.split('/')[1]
-                ? 'text-red-500'
-                : 'text-gray-500'
+                ? 'text-red'
+                : 'text-white'
             } w-[25%]`}
             key={item.title}>
             <Link to={item.url} className="w-full text-center">
@@ -56,11 +56,12 @@ export function NavTabs() {
         ))}
       </ul>
       <span
-        className={`absolute h-[2px] w-[25%] bg-gray-300 duration-1000 ease-in-out`}
+        className={`absolute w-[25%] duration-1000 ease-in-out `}
         style={{
           transform: `translateX(${currentIndex * 100}%)`,
-        }}
-      />
+        }}>
+        <div className="absolute bottom-0 h-[2px] w-full bg-red" />
+      </span>
     </nav>
   );
 }

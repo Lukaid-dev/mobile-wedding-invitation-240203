@@ -18,7 +18,7 @@ export const router = createBrowserRouter([
         path: '/',
         element: <Home />,
         loader: async (): Promise<string> => {
-          const imageRef = ref(storage, 'image_test_3.png');
+          const imageRef = ref(storage, 'background_image.png');
           const url = getDownloadURL(imageRef)
             .then((url) => {
               return url;
@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
         path: '/Home',
         element: <Home />,
         loader: async (): Promise<string> => {
-          const imageRef = ref(storage, 'image_test_3.png');
+          const imageRef = ref(storage, 'background_image.png');
           const url = getDownloadURL(imageRef)
             .then((url) => {
               return url;
