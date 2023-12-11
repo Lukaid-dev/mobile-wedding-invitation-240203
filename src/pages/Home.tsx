@@ -37,7 +37,7 @@ export default function Home() {
           backgroundRepeat: 'no-repeat',
           height: `${height}px`,
         }}>
-        <div className="mt-12 flex flex-col items-center">
+        <div className="mt-4 flex flex-col items-center">
           <span className="text-center font-batang text-xl text-gray-900">
             초대합니다
           </span>
