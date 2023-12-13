@@ -27,57 +27,55 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <div
-        className="relative flex flex-col items-center"
-        style={{
-          backgroundImage: `url(${url})`,
-          backgroundSize: '100% auto',
-          backgroundPosition: 'bottom',
-          backgroundRepeat: 'no-repeat',
-          height: `${height}px`,
-        }}>
-        <div className="mt-4 flex flex-col items-center">
-          <span className="text-center font-batang text-xl text-gray-900">
-            초대합니다
-          </span>
-          <span className="mt-2 text-center font-batang text-sm">
-            부부라는 이름으로 서로의 곁에서
-            <br />
-            언제나 함께 하겠습니다
-          </span>
-          {/* TODO: 배경 색 바꾸고 여기 색도 바꿔야 함 */}
-          <div className="mx-auto my-4 h-[1px] w-2/3 bg-gray-400" />
-          <span
-            style={{
-              fontSize: '13px',
-              fontWeight: 400,
-              lineHeight: '19px',
-            }}>
-            월드컵 컨벤션
-          </span>
-          <span
-            style={{
-              marginTop: '4px',
-              fontSize: '13px',
-              fontWeight: 400,
-              lineHeight: '19px',
-            }}>
-            2024년 2월 3일 오후 3시 20분
-          </span>
-          <span
-            style={{
-              color: 'red',
-              marginTop: '4px',
-              fontSize: '13px',
-              fontWeight: 400,
-              lineHeight: '19px',
-            }}>
-            D-{diff}
-          </span>
-        </div>
-        <NextButton to="/Invitation" text="청첩장 보러가기" />
+    <div
+      className="relative flex flex-col items-center "
+      style={{
+        backgroundImage: `url(${url})`,
+        backgroundSize: '100% auto',
+        backgroundPosition: 'bottom',
+        backgroundRepeat: 'no-repeat',
+        height: `${height}px`,
+      }}>
+      <div className="mt-4 flex flex-col items-center">
+        <span className="text-center font-batang text-xl text-gray-900">
+          초대합니다
+        </span>
+        <span className="mt-2 text-center font-batang text-sm">
+          부부라는 이름으로 서로의 곁에서
+          <br />
+          언제나 함께 하겠습니다
+        </span>
+        {/* TODO: 배경 색 바꾸고 여기 색도 바꿔야 함 */}
+        <div className="mx-auto my-4 h-[1px] w-2/3 bg-gray-400" />
+        <span
+          style={{
+            fontSize: '13px',
+            fontWeight: 400,
+            lineHeight: '19px',
+          }}>
+          월드컵 컨벤션
+        </span>
+        <span
+          style={{
+            marginTop: '4px',
+            fontSize: '13px',
+            fontWeight: 400,
+            lineHeight: '19px',
+          }}>
+          2024년 2월 3일 오후 3시 20분
+        </span>
+        <span
+          style={{
+            color: 'red',
+            marginTop: '4px',
+            fontSize: '13px',
+            fontWeight: 400,
+            lineHeight: '19px',
+          }}>
+          D-{diff}
+        </span>
       </div>
-    </>
+      <NextButton to="/Invitation" text="청첩장 보러가기" />
+    </div>
   );
 }

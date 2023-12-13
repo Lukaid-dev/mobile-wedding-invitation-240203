@@ -5,7 +5,7 @@ import { INavItem } from '../types';
 const navList: INavItem[] = [
   {
     url: 'Home',
-    title: '홈',
+    title: '초대합니다',
   },
   {
     url: 'Invitation',
@@ -13,7 +13,7 @@ const navList: INavItem[] = [
   },
   {
     url: 'Gallery',
-    title: '사진첩',
+    title: '사진',
   },
   {
     url: 'Guestbook',
