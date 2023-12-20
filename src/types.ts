@@ -12,6 +12,8 @@ export enum GBReturnCode {
   PwInvalid = 'PwInvalid',
   TextEmpty = 'TextEmpty',
   NetworkError = 'NetworkError',
+  IdEmpty = 'IdEmpty',
+  IdNotFound = 'IdNotFound',
 }
 
 export interface RouterContextInterface {

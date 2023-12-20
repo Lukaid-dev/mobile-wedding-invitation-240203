@@ -46,10 +46,10 @@ export default function Card({
   };
 
   useEffect(() => {
-    if (text.length > 100) {
+    if (text?.length > 100) {
       setEllipsis(true);
     }
-  }, [text.length]);
+  }, [text]);
 
   return (
     <div className="flex flex-col gap-2 rounded-lg border border-gray-200 p-4">

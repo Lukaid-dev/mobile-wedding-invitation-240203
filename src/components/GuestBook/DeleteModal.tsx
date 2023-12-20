@@ -1,4 +1,6 @@
-import { RefObject } from 'react';
+import { RefObject, useState } from 'react';
+import x from '../../assets/x.svg';
+import DeleteButton from './DeleteButton';
 
 interface DeleteModalProps {
   modalOverlayRef: RefObject<HTMLDivElement>;
@@ -13,6 +15,8 @@ export default function DeleteModal({
   modalOutsideClick,
   guestbookEntryId,
 }: DeleteModalProps) {
+  const [pw, setPw] = useState(''); // 비밀번호 입력 받기
+
   return (
     <div
       ref={modalOverlayRef}
@@ -23,25 +27,19 @@ export default function DeleteModal({
         WebkitBackdropFilter: 'blur(2px)',
       }}
       onClick={modalOutsideClick}>
-      <div className="flex flex-col items-center justify-center gap-2 border-2 bg-slate-200">
-        <div className="text-2xl font-bold">
-          정말 삭제하시겠습니까? {guestbookEntryId}
+      <div className="flex w-[90%] flex-col gap-6 rounded-2xl bg-white p-6">
+        <div className="flex items-center justify-between ">
+          <div className="font-bold">비밀번호를 입력해주세요</div>
+          <img src={x} alt="X" className="w-6" />
         </div>
-        <div className="flex gap-2">
-          <button
-            className="rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600"
-            onClick={closeModal}>
-            취소
-          </button>
-          <button
-            className="rounded bg-green-500 px-4 py-2 text-white hover:bg-green-600"
-            onClick={() => {
-              alert('삭제되었습니다.');
-              closeModal();
-            }}>
-            삭제
-          </button>
-        </div>
+        <input
+          type="text"
+          className="h-12 rounded-lg border border-gray-200 px-2 py-3"
+          placeholder="비밀번호 4자리"
+          value={pw}
+          onChange={(e) => setPw(e.target.value)}
+        />
+        <DeleteButton id={guestbookEntryId} closeModal={closeModal} pw={pw} />
       </div>
     </div>
   );
