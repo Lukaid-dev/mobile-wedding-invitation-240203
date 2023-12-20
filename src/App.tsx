@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     if (location.pathname === '/Home') {
-      setBg(`bg-gradient-to-b from-bg_from to-bg_to mix-blend-overlay`);
+      setBg(`bg-gradient-to-b from-bg_from to-bg_to`);
     } else {
       setBg(`bg-white`);
     }

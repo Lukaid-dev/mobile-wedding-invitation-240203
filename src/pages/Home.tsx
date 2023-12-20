@@ -29,28 +29,20 @@ export default function Home() {
     };
   }, []);
 
-  // lazy loading
   useEffect(() => {
     const loadImage = async () => {
-      const imageRef = ref(storage, 'background_image.png');
-      const url = await getDownloadURL(imageRef)
-        .then((url) => {
-          return url;
-        })
-        .catch((error) => {
-          // Handle any errors
-          new Error(error);
-          return '';
-        });
+      try {
+        const imageRef = ref(storage, 'background_image.png');
+        const url = await getDownloadURL(imageRef);
 
-      // get image from url
-      const image = new Image();
-      image.src = url as string;
-      image.onload = () => {
+        const image = new Image();
+        image.src = url as string;
         document
           .getElementById('home-page')
           ?.style.setProperty('background-image', `url(${url})`);
-      };
+      } catch (error) {
+        new Error(error as string);
+      }
     };
     loadImage();
   }, []);
@@ -65,6 +57,7 @@ export default function Home() {
         backgroundPosition: 'bottom',
         backgroundRepeat: 'no-repeat',
         height: `${height}px`,
+        transition: 'background-image 0.5s ease-in-out',
       }}>
       <div className="mt-4 flex flex-col items-center">
         <span className="text-center font-batang text-xl text-gray-900">
@@ -75,7 +68,6 @@ export default function Home() {
           <br />
           언제나 함께 하겠습니다
         </span>
-        {/* TODO: 배경 색 바꾸고 여기 색도 바꿔야 함 */}
         <Divider />
         <span
           className="mt-4"
@@ -112,16 +104,13 @@ export default function Home() {
 }
 
 export const loader = async (): Promise<string> => {
-  const imageRef = ref(storage, 'main.png');
-  const url = await getDownloadURL(imageRef)
-    .then((url) => {
-      return url;
-    })
-    .catch((error) => {
-      // Handle any errors
-      new Error(error);
-      return '';
-    });
-  console.log(url);
-  return url;
+  try {
+    const imageRef = ref(storage, 'main.png');
+    const url = await getDownloadURL(imageRef);
+    console.log(url);
+    return url;
+  } catch (error) {
+    console.error(error);
+    return '';
+  }
 };
