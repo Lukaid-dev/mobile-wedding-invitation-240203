@@ -2,6 +2,10 @@ import { useEffect, useRef } from 'react';
 import Divider from '../Divider';
 import Box from './Box';
 
+import train from '../../assets/train.svg';
+import bus from '../../assets/bus.svg';
+import car from '../../assets/car.svg';
+
 export default function Map() {
   const mapElement = useRef<HTMLDivElement>(null);
 
@@ -41,7 +45,7 @@ export default function Map() {
 
         <div className="my-6 flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            <img src="src/assets/train.svg" alt="Train" className="h-4 w-4" />
+            <img src={train} alt="Train" className="h-4 w-4" />
             <p className="font-bold">지하철</p>
           </div>
           <div className="ml-8 flex items-center justify-start gap-[2px]">
@@ -56,7 +60,7 @@ export default function Map() {
 
         <div className="my-6 flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            <img src="src/assets/bus.svg" alt="Bus" className="h-4 w-4" />
+            <img src={bus} alt="Bus" className="h-4 w-4" />
             <p className="font-bold">버스</p>
           </div>
           <div className="ml-8 flex items-center justify-start">
@@ -98,7 +102,7 @@ export default function Map() {
 
         <div className="my-6 flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            <img src="src/assets/car.svg" alt="Car" className="h-4 w-4" />
+            <img src={car} alt="Car" className="h-4 w-4" />
             <p className="font-bold">자가용</p>
           </div>
           <div className="ml-8 flex flex-col items-start justify-center gap-4">

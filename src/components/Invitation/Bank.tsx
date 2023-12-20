@@ -3,6 +3,8 @@ import Divider from '../Divider';
 import KPButton from '../KPButton';
 import Box from './Box';
 
+import kb from '../../assets/kb.png';
+
 export default function Bank() {
   return (
     <Box title="마음 전하실 곳">
@@ -13,7 +15,7 @@ export default function Bank() {
         <div className="flex items-stretch justify-between">
           <div className="flex">이성우</div>
           <div className="flex items-center justify-center gap-1">
-            <img src="src/assets/kb.png" alt="" className="h-4 w-4" />
+            <img src={kb} alt="" className="h-4 w-4" />
             <p>국민 123456-78-901234</p>
           </div>
         </div>
@@ -27,7 +29,7 @@ export default function Bank() {
         <div className="flex items-stretch justify-between">
           <div className="flex">이성우</div>
           <div className="flex items-center justify-center gap-1">
-            <img src="src/assets/kb.png" alt="" className="h-4 w-4" />
+            <img src={kb} alt="" className="h-4 w-4" />
             <p>국민 123456-78-901234</p>
           </div>
         </div>
@@ -44,7 +46,7 @@ export default function Bank() {
         <div className="flex items-stretch justify-between">
           <div className="flex">최예주</div>
           <div className="flex items-center justify-center gap-1">
-            <img src="src/assets/kb.png" alt="" className="h-4 w-4" />
+            <img src={kb} alt="" className="h-4 w-4" />
             <p>국민 123456-78-901234</p>
           </div>
         </div>
@@ -58,7 +60,7 @@ export default function Bank() {
         <div className="flex items-stretch justify-between">
           <div className="flex">최예주</div>
           <div className="flex items-center justify-center gap-1">
-            <img src="src/assets/kb.png" alt="" className="h-4 w-4" />
+            <img src={kb} alt="" className="h-4 w-4" />
             <p>국민 123456-78-901234</p>
           </div>
         </div>
