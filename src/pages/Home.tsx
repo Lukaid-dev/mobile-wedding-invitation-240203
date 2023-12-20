@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import NextButton from '../components/NextButton';
+import { getDownloadURL, ref } from 'firebase/storage';
+import { storage } from '../firebase';
 
 export default function Home() {
   const [height, setHeight] = useState(window.innerHeight);
 
-  const url = useLoaderData() as string;
+  const url = useLoaderData();
 
   const dDay = new Date('2024-02-03T15:20:00+09:00');
   const today = new Date();
@@ -26,9 +28,36 @@ export default function Home() {
     };
   }, []);
 
+  // lazy loading
+  useEffect(() => {
+    const loadImage = async () => {
+      const imageRef = ref(storage, 'background_image.png');
+      const url = await getDownloadURL(imageRef)
+        .then((url) => {
+          return url;
+        })
+        .catch((error) => {
+          // Handle any errors
+          new Error(error);
+          return '';
+        });
+
+      // get image from url
+      const image = new Image();
+      image.src = url as string;
+      image.onload = () => {
+        document
+          .getElementById('home-page')
+          ?.style.setProperty('background-image', `url(${url})`);
+      };
+    };
+    loadImage();
+  }, []);
+
   return (
     <div
-      className="relative flex flex-col items-center "
+      id="home-page"
+      className="relative flex flex-col items-center"
       style={{
         backgroundImage: `url(${url})`,
         backgroundSize: '100% auto',
@@ -79,3 +108,17 @@ export default function Home() {
     </div>
   );
 }
+
+export const loader = async (): Promise<string> => {
+  const imageRef = ref(storage, 'main.png');
+  const url = await getDownloadURL(imageRef)
+    .then((url) => {
+      return url;
+    })
+    .catch((error) => {
+      // Handle any errors
+      new Error(error);
+      return '';
+    });
+  return url;
+};

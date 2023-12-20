@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Home from './pages/Home';
+import Home, { loader as HomeLoader } from './pages/Home';
 import GuestBook from './pages/GuestBook';
 import App from './App';
 import Invitation from './pages/Invitation';
@@ -22,19 +22,7 @@ export const router = createBrowserRouter([
       {
         path: '/Home',
         element: <Home />,
-        loader: async (): Promise<string> => {
-          const imageRef = ref(storage, 'background_image.png');
-          const url = getDownloadURL(imageRef)
-            .then((url) => {
-              return url;
-            })
-            .catch((error) => {
-              // Handle any errors
-              new Error(error);
-              return '';
-            });
-          return url;
-        },
+        loader: HomeLoader,
       },
       {
         path: '/Invitation',
