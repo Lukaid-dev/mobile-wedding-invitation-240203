@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import NextButton from '../components/NextButton';
 import { getDownloadURL, ref } from 'firebase/storage';
 import { storage } from '../firebase';
+import Divider from '../components/Divider';
 
 export default function Home() {
   const [height, setHeight] = useState(window.innerHeight);
@@ -69,14 +70,15 @@ export default function Home() {
         <span className="text-center font-batang text-xl text-gray-900">
           초대합니다
         </span>
-        <span className="mt-2 text-center font-batang text-sm">
+        <span className="mb-4 mt-2 text-center font-batang text-sm">
           부부라는 이름으로 서로의 곁에서
           <br />
           언제나 함께 하겠습니다
         </span>
         {/* TODO: 배경 색 바꾸고 여기 색도 바꿔야 함 */}
-        <div className="mx-auto my-4 h-[1px] w-2/3 bg-gray-400" />
+        <Divider />
         <span
+          className="mt-4"
           style={{
             fontSize: '13px',
             fontWeight: 400,
@@ -120,5 +122,6 @@ export const loader = async (): Promise<string> => {
       new Error(error);
       return '';
     });
+  console.log(url);
   return url;
 };
