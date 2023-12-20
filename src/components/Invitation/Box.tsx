@@ -9,7 +9,7 @@ export default function Calendar({
 }) {
   return (
     <div className="flex w-full flex-col items-center rounded-lg border border-gray-200 p-6 font-batang">
-      <p className="mb-[10px]">{title}</p>
+      <p className="mb-[10px] font-bold">{title}</p>
       <Divider />
       {children}
     </div>

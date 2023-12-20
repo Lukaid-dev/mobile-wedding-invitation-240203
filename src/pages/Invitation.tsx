@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import Greeting from '../components/Invitation/Greeting';
 import Calendar from '../components/Invitation/Calendar';
 import Contact from '../components/Invitation/Contact';
+import Bank from '../components/Invitation/Bank';
 
 export default function Invitation() {
   const mapElement = useRef<HTMLDivElement>(null);
@@ -37,6 +38,7 @@ export default function Invitation() {
         <Greeting />
         <Calendar />
         <Contact />
+        <Bank />
       </div>
 
       <div ref={mapElement} className="h-[200px] w-full" />

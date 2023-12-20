@@ -25,6 +25,7 @@ export default {
       red: '#FF2C20',
       blue: '#386DE8',
       green: '#3BC344',
+      yellow: '#FFEB00',
     },
   },
   plugins: [],

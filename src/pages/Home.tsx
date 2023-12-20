@@ -37,6 +37,7 @@ export default function Home() {
 
         const image = new Image();
         image.src = url as string;
+        // 애플 깜빡임 돌아버리겠다
         document
           .getElementById('home-page')
           ?.style.setProperty('background-image', `url(${url})`);
@@ -57,7 +58,7 @@ export default function Home() {
         backgroundPosition: 'bottom',
         backgroundRepeat: 'no-repeat',
         height: `${height}px`,
-        transition: 'background-image 0.5s ease-in-out',
+        transition: 'background-image 0.1s ease-in-out',
       }}>
       <div className="mt-4 flex flex-col items-center">
         <span className="text-center font-batang text-xl text-gray-900">
