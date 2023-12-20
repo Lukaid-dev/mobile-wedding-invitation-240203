@@ -65,9 +65,9 @@ export default function Home() {
           초대합니다
         </span>
         <span className="mb-4 mt-2 text-center font-batang text-sm">
-          부부라는 이름으로 서로의 곁에서
+          우리라는 이름으로 걸어가는 첫걸음,
           <br />
-          언제나 함께 하겠습니다
+          소중한 분들을 모십니다
         </span>
         <Divider />
         <span
