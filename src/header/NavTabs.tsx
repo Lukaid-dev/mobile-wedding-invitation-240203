@@ -29,6 +29,8 @@ const getCurrentIndex = (pathname: string) => {
 
 export function NavTabs() {
   const location = useLocation();
+  const [textColor, setTextColor] = useState('text-white');
+  const [borderColor, setBorderColor] = useState('border-white');
   const [currentIndex, setCurrentIndex] = useState(
     getCurrentIndex(location.pathname),
   );
@@ -36,17 +38,26 @@ export function NavTabs() {
   useEffect(() => {
     setCurrentIndex(getCurrentIndex(location.pathname));
     window.scrollTo(0, 0);
+
+    if (location.pathname === '/Home') {
+      setTextColor('text-white');
+      setBorderColor('border-white');
+    } else {
+      setTextColor('text-gray-400');
+      setBorderColor('border-gray-400');
+    }
   }, [location.pathname]);
 
   return (
     <nav className="relative h-[2rem]">
-      <ul className="flex items-center justify-center border-b-2 border-white">
+      <ul
+        className={`flex items-center justify-center border-b-2 ${borderColor}`}>
         {navList.map((item) => (
           <li
             className={`relative flex cursor-pointer items-center justify-center ${
               item.url === location.pathname.split('/')[1]
                 ? 'text-red'
-                : 'text-white'
+                : textColor
             } w-[25%]`}
             key={item.title}>
             <Link to={item.url} className="w-full text-center">
