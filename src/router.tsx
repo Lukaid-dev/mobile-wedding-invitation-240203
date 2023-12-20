@@ -7,6 +7,7 @@ import Gallery from './pages/Gallery';
 import NotFound from './pages/NotFound';
 import { storage } from './firebase';
 import { getDownloadURL, ref } from 'firebase/storage';
+import Landing from './pages/Landing';
 
 export const router = createBrowserRouter([
   {
@@ -16,20 +17,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />,
-        loader: async (): Promise<string> => {
-          const imageRef = ref(storage, 'background_image.png');
-          const url = getDownloadURL(imageRef)
-            .then((url) => {
-              return url;
-            })
-            .catch((error) => {
-              // Handle any errors
-              new Error(error);
-              return '';
-            });
-          return url;
-        },
+        element: <Landing />,
       },
       {
         path: '/Home',
