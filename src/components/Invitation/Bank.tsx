@@ -1,6 +1,6 @@
-import CopyButton from '../CopyButton';
+import CopyButton from './CopyButton';
 import Divider from '../Divider';
-import KPButton from '../KPButton';
+import KPButton from './KPButton';
 import Box from './Box';
 
 import kb from '../../assets/kb.png';

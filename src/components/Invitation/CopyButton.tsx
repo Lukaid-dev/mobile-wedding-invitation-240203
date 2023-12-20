@@ -1,4 +1,4 @@
-import copy from '../assets/copy.svg';
+import copy from '../../assets/copy.svg';
 
 export default function CopyButton() {
   return (

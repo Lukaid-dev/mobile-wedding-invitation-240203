@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { GuestBookEntry, GBReturnCode } from '../types';
 import { getGuestBookEntries, postGuestBookEntry } from '../api';
 import { FaXmark } from 'react-icons/fa6';
-import DeleteModal from '../components/DeleteModal';
+import DeleteModal from '../components/GuestBook/DeleteModal';
 
 export default function GuestBook() {
   const [guestbookEntries, setGuestbookEntries] = useState<DocumentData>([]);
@@ -76,7 +76,7 @@ export default function GuestBook() {
       <div className="text-center text-2xl font-bold"> 방 명 록 </div>
       <div className="text-center">축하 메세지를 남겨주세요!</div>
 
-      <div className="flex flex-col items-center justify-center gap-2 border-2 bg-slate-200">
+      <div className="bg-slate-200 flex flex-col items-center justify-center gap-2 border-2">
         <div className="flex w-full gap-2">
           <input
             type="text"
@@ -106,10 +106,10 @@ export default function GuestBook() {
         </button>
       </div>
 
-      <ul className="flex flex-col gap-2 overflow-auto  bg-slate-50 px-4 pb-4 pt-10">
+      <ul className="bg-slate-50 flex flex-col gap-2  overflow-auto px-4 pb-4 pt-10">
         {guestbookEntries.map((entries: GuestBookEntry) => (
           <li key={entries.salt}>
-            <div className="flex flex-col gap-2 rounded-md bg-slate-200 px-4 py-4">
+            <div className="bg-slate-200 flex flex-col gap-2 rounded-md px-4 py-4">
               <div className="flex w-full justify-between">
                 <span>{entries.name}</span>
                 <div className="flex gap-2">

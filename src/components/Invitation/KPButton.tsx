@@ -1,4 +1,4 @@
-import kp from '../assets/kakaoPay.png';
+import kp from '../../assets/kakaoPay.png';
 
 export default function KPButton() {
   return (
