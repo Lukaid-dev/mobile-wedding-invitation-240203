@@ -1,7 +1,14 @@
 import { useEffect } from 'react';
 import github from '../../assets/github.png';
 import kakaoLogo from '../../assets/kakao.svg';
-// kakao 기능 동작을 위해 넣어준다.
+
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    Kakao: any;
+  }
+}
+
 const { Kakao } = window;
 
 const Share = () => {
