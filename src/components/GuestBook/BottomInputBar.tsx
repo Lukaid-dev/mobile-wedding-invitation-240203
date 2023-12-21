@@ -76,12 +76,21 @@ const BottomInputBar = forwardRef<HTMLDivElement, Props>(
             value={newEntry.text}
             onChange={(e) => setNewEntry({ ...newEntry, text: e.target.value })}
           />
-          <div className="flex h-8 w-8 flex-shrink-0  items-center justify-center rounded-full bg-gray-200">
+          <div
+            className={`flex h-8 w-8 flex-shrink-0  items-center justify-center rounded-full ${
+              newEntry.name && newEntry.pw && newEntry.text
+                ? 'bg-red'
+                : 'bg-gray-200'
+            }`}>
             <img
               src={arrowUpWhite}
               alt="arrowUpWhite"
               className="h-5 w-5"
-              onClick={handlePostEntry}
+              onClick={
+                newEntry.name && newEntry.pw && newEntry.text
+                  ? handlePostEntry
+                  : () => {}
+              }
             />
           </div>
         </div>
