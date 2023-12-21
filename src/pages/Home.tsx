@@ -1,14 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
 import NextButton from '../components/NextButton';
-import { getDownloadURL, ref } from 'firebase/storage';
-import { storage } from '../firebase';
 import Divider from '../components/Divider';
 
 export default function Home() {
   const [height, setHeight] = useState(window.innerHeight);
-
-  const url = useLoaderData();
 
   const dDay = new Date('2024-02-03T15:20:00+09:00');
   const today = new Date();
@@ -29,33 +24,13 @@ export default function Home() {
     };
   }, []);
 
-  useEffect(() => {
-    const loadImage = async () => {
-      try {
-        const imageRef = ref(storage, 'background_image.png');
-        const url = await getDownloadURL(imageRef);
-
-        const image = new Image();
-        image.src = url as string;
-        // 애플 깜빡임 돌아버리겠다
-        document
-          .getElementById('home-page')
-          ?.style.setProperty('background-image', `url(${url})`);
-      } catch (error) {
-        new Error(error as string);
-      }
-    };
-    loadImage();
-  }, []);
-
   return (
     <div
       id="home-page"
       className="relative flex flex-col items-center"
-      // 스크롤 없애기
       style={{
-        backgroundImage: `url(${url})`,
-        backgroundSize: '100% auto',
+        backgroundImage: `url(https://res.cloudinary.com/dxahuoqco/image/upload/v1703159660/mo5fckyxp1kwt3ikfpxv.png)`,
+        backgroundSize: '90% auto',
         backgroundPosition: 'bottom',
         backgroundRepeat: 'no-repeat',
         height: `${height}px`,
@@ -104,14 +79,3 @@ export default function Home() {
     </div>
   );
 }
-
-export const loader = async (): Promise<string> => {
-  try {
-    const imageRef = ref(storage, 'main.png');
-    const url = await getDownloadURL(imageRef);
-    return url;
-  } catch (error) {
-    console.error(error);
-    return '';
-  }
-};
