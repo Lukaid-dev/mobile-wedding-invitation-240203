@@ -1,18 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import NextButton from '../components/NextButton';
 import Divider from '../components/Divider';
+import { ImageContext } from '../contexts/ImageProvider';
 
 export default function Home() {
+  const { cld } = useContext(ImageContext);
+  const [bg, setBg] = useState('');
   const [height, setHeight] = useState(window.innerHeight);
 
   const dDay = new Date('2024-02-03T15:20:00+09:00');
   const today = new Date();
-  // 며칠 남았는지 계산
   const diff = Math.ceil(
     (dDay.getTime() - today.getTime()) / (1000 * 3600 * 24),
   );
 
   useEffect(() => {
+    const myImage = cld.image('main');
+    setBg(myImage.toURL());
+
     const updateHeight = () => {
       const headerHeight = 16 * 4;
       setHeight(window.innerHeight - headerHeight);
@@ -22,19 +27,18 @@ export default function Home() {
     return () => {
       window.removeEventListener('resize', updateHeight);
     };
-  }, []);
+  }, [cld]);
 
   return (
     <div
       id="home-page"
       className="relative flex flex-col items-center"
       style={{
-        backgroundImage: `url(https://res.cloudinary.com/dxahuoqco/image/upload/v1703159660/mo5fckyxp1kwt3ikfpxv.png)`,
+        backgroundImage: `url(${bg})`,
         backgroundSize: '90% auto',
         backgroundPosition: 'bottom',
         backgroundRepeat: 'no-repeat',
         height: `${height}px`,
-        transition: 'background-image 0.1s ease-in-out',
       }}>
       <div className="mt-4 flex flex-col items-center">
         <span className="text-center font-batang text-xl text-gray-900">
