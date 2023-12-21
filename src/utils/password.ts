@@ -1,4 +1,4 @@
-import { SHA256, enc } from 'crypto-js';
+import CryptoJS, { SHA256, enc } from 'crypto-js';
 
 const hashPassword = (password: string, salt: string): string => {
   const hashedPassword = SHA256(password + salt).toString(enc.Hex);

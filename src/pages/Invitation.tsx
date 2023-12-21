@@ -7,20 +7,18 @@ import NextButton from '../components/NextButton';
 
 export default function Invitation() {
   return (
-    <>
-      <div className="animate-fadeInOut flex flex-col items-center justify-center gap-6 p-4">
-        <Greeting />
-        <Calendar />
-        <Contact />
-        <Bank />
-        <Map />
-        <NextButton
-          to="/Gallery"
-          text="사진 보러 가기"
-          bg="bg-red"
-          textColor="text-white"
-        />
-      </div>
-    </>
+    <div className="animate-fadeInOut flex flex-col items-center justify-center gap-6 p-4">
+      <Greeting />
+      <Calendar />
+      <Contact />
+      <Bank />
+      <Map />
+      <NextButton
+        to="/Gallery"
+        text="사진 보러 가기"
+        bg="bg-red"
+        textColor="text-white"
+      />
+    </div>
   );
 }

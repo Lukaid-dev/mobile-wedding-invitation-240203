@@ -52,6 +52,7 @@ export default function Home() {
     <div
       id="home-page"
       className="relative flex flex-col items-center"
+      // 스크롤 없애기
       style={{
         backgroundImage: `url(${url})`,
         backgroundSize: '100% auto',
@@ -108,7 +109,6 @@ export const loader = async (): Promise<string> => {
   try {
     const imageRef = ref(storage, 'main.png');
     const url = await getDownloadURL(imageRef);
-    console.log(url);
     return url;
   } catch (error) {
     console.error(error);

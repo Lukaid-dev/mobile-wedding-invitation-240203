@@ -29,8 +29,8 @@ export default function DeleteModal({
       onClick={modalOutsideClick}>
       <div className="flex w-[90%] flex-col gap-6 rounded-2xl bg-white p-6">
         <div className="flex items-center justify-between ">
-          <div className="font-bold">비밀번호를 입력해주세요</div>
-          <img src={x} alt="X" className="w-6" />
+          <div className="font-bold">삭제하시겠습니까?</div>
+          <img src={x} alt="X" className="w-6" onClick={closeModal} />
         </div>
         <input
           type="text"

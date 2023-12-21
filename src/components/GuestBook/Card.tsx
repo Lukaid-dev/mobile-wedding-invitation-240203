@@ -26,19 +26,16 @@ export default function Card({
   const renderText = () => {
     if (ellipsis) {
       return (
-        console.log('long'),
-        (
-          <div className="flex">
-            <p
-              style={{
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
-              }}>
-              {text}
-            </p>
-          </div>
-        )
+        <div className="flex">
+          <p
+            style={{
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+            }}>
+            {text}
+          </p>
+        </div>
       );
     } else {
       return <p>{text}</p>;

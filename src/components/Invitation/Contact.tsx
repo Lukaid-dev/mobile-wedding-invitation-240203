@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 
 export default function Contact() {
   const [isMobile, setIsMobile] = useState(false);
-  console.log(navigator.userAgent);
 
   useEffect(() => {
     setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
