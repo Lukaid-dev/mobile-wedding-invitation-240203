@@ -2,42 +2,18 @@ import {
   collection,
   getDocs,
   addDoc,
-  setDoc,
   doc,
   updateDoc,
-  deleteDoc,
 } from 'firebase/firestore';
-import { GuestBookEntry, GBReturnCode } from './types';
 import { db } from './firebase';
+import { GuestBookEntry, GBReturnCode } from './types';
+import { checkPassword, generatePassword } from './utils/password';
 
-import CryptoJS, { SHA256, enc } from 'crypto-js';
-
-const hashPassword = (password: string, salt: string): string => {
-  const hashedPassword = SHA256(password + salt).toString(enc.Hex);
-  return hashedPassword;
-};
-
-const generatePassword = (
-  password: string,
-): { hashedPassword: string; salt: string } => {
-  const salt = CryptoJS.lib.WordArray.random(128 / 8).toString(enc.Hex);
-  const hashedPassword = hashPassword(password, salt);
-  return { hashedPassword, salt };
-};
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const checkPassword = (
-  password: string,
-  salt: string,
-  hashedPassword: string,
-): boolean => {
-  const hashedPasswordToCheck = hashPassword(password, salt);
-  return hashedPasswordToCheck === hashedPassword;
-};
-
+// GET
 export const getGuestBookEntries = async (): Promise<GuestBookEntry[]> => {
   const guestbookCollection = collection(db, 'GuestBook');
   const querySnapshot = await getDocs(guestbookCollection);
+  // sort by createdAt
   const entries = querySnapshot.docs
     .filter((doc) => !doc.data().deletedAt)
     .map((doc) => doc.data() as GuestBookEntry)
@@ -48,10 +24,10 @@ export const getGuestBookEntries = async (): Promise<GuestBookEntry[]> => {
         return 0;
       }
     });
-  // sort by createdAt
   return entries;
 };
 
+// POST
 export const postGuestBookEntry = async (
   entry: GuestBookEntry,
 ): Promise<GBReturnCode> => {
@@ -89,6 +65,7 @@ export const postGuestBookEntry = async (
   }
 };
 
+// DELETE
 export const deleteGuestBookEntry = async (
   id: string,
   pw: string,
@@ -107,41 +84,31 @@ export const deleteGuestBookEntry = async (
 
   const guestbookCollection = collection(db, 'GuestBook');
   const querySnapshot = await getDocs(guestbookCollection);
-  const entries = querySnapshot.docs
-    .map((doc) => doc.data() as GuestBookEntry)
-    .filter((entry) => entry.salt === id);
+  const entry = querySnapshot.docs.filter((doc) => {
+    const data = doc.data() as GuestBookEntry;
+    return data.salt === id;
+  })[0];
 
-  if (entries.length === 0) {
+  if (!entry) {
     return GBReturnCode.IdNotFound;
   }
 
-  const entry = entries[0];
-
-  if (!entry.pw || !entry.salt) {
-    return GBReturnCode.PwInvalid;
-  }
-
-  const isPasswordCorrect = checkPassword(pw, entry.salt, entry.pw);
+  const isPasswordCorrect = checkPassword(
+    pw,
+    entry.data().salt,
+    entry.data().pw,
+  );
 
   if (!isPasswordCorrect) {
     return GBReturnCode.PwInvalid;
   }
 
+  const ref = doc(db, 'GuestBook', entry.id);
+
   // soft delete
-  // await setDoc(doc(db, 'GuestBook', entry.salt), {
-  //   ...entry,
-  //   deletedAt: new Date().toISOString(),
-  // });
-
-  const ref = doc(db, 'GuestBook', entry.salt);
-
-  console.log(ref.firestore.toJSON);
-
-  await deleteDoc(ref);
-
-  // await updateDoc(doc(db, 'GuestBook', entry.salt), {
-  //   deletedAt: new Date().toISOString(),
-  // });
+  await updateDoc(ref, {
+    deletedAt: new Date().toISOString(),
+  });
 
   return GBReturnCode.Success;
 };

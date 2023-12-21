@@ -1,4 +1,5 @@
 import { deleteGuestBookEntry } from '../../api';
+import { GBReturnCode } from '../../types';
 
 export default function DeleteButton({
   id,
@@ -10,10 +11,18 @@ export default function DeleteButton({
   closeModal: () => void;
 }) {
   const handleDelete = async () => {
-    const res = await deleteGuestBookEntry(id, pw);
+    const res: GBReturnCode = await deleteGuestBookEntry(id, pw);
 
-    // closeModal();
-    // window.location.reload();
+    if (res === GBReturnCode.PwEmpty) {
+      alert('비밀번호를 입력해주세요.');
+    }
+
+    if (res === GBReturnCode.PwInvalid) {
+      alert('비밀번호가 일치하지 않습니다.');
+    }
+
+    closeModal();
+    window.location.reload();
   };
 
   return (
