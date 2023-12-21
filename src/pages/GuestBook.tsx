@@ -60,7 +60,6 @@ export default function GuestBook() {
     <div className=" flex flex-col">
       <ul
         className="flex flex-col gap-4 overflow-auto px-4 pb-4 pt-4"
-        // scroll
         style={{
           height: `calc(${excludedHeight}px - 4rem)`,
           overflowY: 'scroll',
