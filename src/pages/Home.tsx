@@ -1,11 +1,8 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import NextButton from '../components/NextButton';
 import Divider from '../components/Divider';
-import { ImageContext } from '../contexts/ImageProvider';
 
 export default function Home() {
-  const { cld } = useContext(ImageContext);
-  const [bg, setBg] = useState('');
   const [height, setHeight] = useState(window.innerHeight);
 
   const dDay = new Date('2024-02-03T15:20:00+09:00');
@@ -15,9 +12,6 @@ export default function Home() {
   );
 
   useEffect(() => {
-    const myImage = cld.image('main');
-    setBg(myImage.toURL());
-
     const updateHeight = () => {
       const headerHeight = 16 * 4;
       setHeight(window.innerHeight - headerHeight);
@@ -27,14 +21,14 @@ export default function Home() {
     return () => {
       window.removeEventListener('resize', updateHeight);
     };
-  }, [cld]);
+  }, []);
 
   return (
     <div
       id="home-page"
       className="relative flex flex-col items-center"
       style={{
-        backgroundImage: `url(${bg})`,
+        backgroundImage: `url(https://res.cloudinary.com/dxahuoqco/image/upload/v1703169023/cdnhvump79tmoh6x5gga.png)`,
         backgroundSize: '90% auto',
         backgroundPosition: 'bottom',
         backgroundRepeat: 'no-repeat',
