@@ -5,6 +5,8 @@ import Box from './Box';
 import train from '../../assets/train.svg';
 import bus from '../../assets/bus.svg';
 import car from '../../assets/car.svg';
+import naverMap from '../../assets/naverMap.png';
+import kakaoMap from '../../assets/kakaoMap.png';
 
 export default function Map() {
   const mapElement = useRef<HTMLDivElement>(null);
@@ -43,13 +45,30 @@ export default function Map() {
 
         <div ref={mapElement} className="h-[182px] w-full rounded-lg" />
 
+        <div className="flex w-full justify-center gap-12 pt-6">
+          <a href="https://naver.me/FSQeKoSR" target="_blank" rel="noreferrer">
+            <img
+              src={naverMap}
+              alt="네이버 지도"
+              className="h-10 w-10 shadow-lg"
+            />
+          </a>
+          <a href="https://kko.to/ZtD3GTCY6-" target="_blank" rel="noreferrer">
+            <img
+              src={kakaoMap}
+              alt="카카오 지도"
+              className="h-10 w-10 shadow-lg"
+            />
+          </a>
+        </div>
+
         <div className="my-6 flex flex-col gap-4">
           <div className="flex items-center gap-2">
             <img src={train} alt="Train" className="h-4 w-4" />
             <p className="font-bold">지하철</p>
           </div>
           <div className="ml-8 flex items-center justify-start gap-[2px]">
-            <div className="bg-brown flex h-5 w-5 items-center justify-center rounded-full text-white">
+            <div className="flex h-5 w-5 items-center justify-center rounded-full bg-brown text-white">
               6
             </div>
             <p>호선 월드컵 경기장역 2번 출구</p>
