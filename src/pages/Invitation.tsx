@@ -4,6 +4,7 @@ import Contact from '../components/Invitation/Contact';
 import Bank from '../components/Invitation/Bank';
 import Map from '../components/Invitation/Map';
 import NextButton from '../components/NextButton';
+import Share from '../components/Invitation/Share';
 
 export default function Invitation() {
   return (
@@ -13,6 +14,7 @@ export default function Invitation() {
       <Contact />
       <Bank />
       <Map />
+      <Share />
       <NextButton
         to="/Gallery"
         text="사진 보러 가기"

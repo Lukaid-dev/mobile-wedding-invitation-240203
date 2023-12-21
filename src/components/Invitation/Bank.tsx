@@ -24,7 +24,7 @@ export default function Bank() {
         </div>
         <div className="flex gap-2">
           <CopyButton bank="toss" />
-          <KPButton />
+          {/* <KPButton /> */}
         </div>
         <div className="my-4">
           <Divider />
@@ -38,7 +38,7 @@ export default function Bank() {
         </div>
         <div className="flex gap-2">
           <CopyButton bank="woori" />
-          <KPButton />
+          {/* <KPButton /> */}
         </div>
       </div>
 
@@ -55,7 +55,7 @@ export default function Bank() {
         </div>
         <div className="flex gap-2">
           <CopyButton bank="hana" />
-          <KPButton />
+          {/* <KPButton /> */}
         </div>
         <div className="my-4">
           <Divider />
@@ -69,7 +69,7 @@ export default function Bank() {
         </div>
         <div className="flex gap-2">
           <CopyButton bank="nh" />
-          <KPButton />
+          {/* <KPButton /> */}
         </div>
       </div>
     </Box>
