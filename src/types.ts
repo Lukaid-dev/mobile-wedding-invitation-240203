@@ -34,3 +34,10 @@ export interface GuestBookEntry {
   createdAt: string;
   deletedAt?: string;
 }
+
+export type images = {
+  [key: string]: {
+    thumbnail: string;
+    main: string;
+  };
+};

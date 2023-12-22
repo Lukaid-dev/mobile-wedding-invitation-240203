@@ -21,7 +21,6 @@ export default function DeleteModal({
     <div
       ref={modalOverlayRef}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 duration-1000 ease-in-out"
-      // 부드럽게 나타나도록 설정
       style={{
         backdropFilter: 'blur(2px)',
         WebkitBackdropFilter: 'blur(2px)',

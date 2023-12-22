@@ -9,9 +9,11 @@ import { getGuestBookEntries } from '../api';
 
 export default function GuestBook() {
   const entries = useLoaderData() as GuestBookEntry[];
-  const [guestbookEntries, setGuestbookEntries] = useState<DocumentData>([]);
-  const [modalOpen, setModalOpen] = useState(false);
   const [guestbookEntryId, setGuestbookEntryId] = useState('');
+  const [guestbookEntries, setGuestbookEntries] = useState<DocumentData>([]);
+
+  // modal
+  const [modalOpen, setModalOpen] = useState(false);
   const modalOverlayRef = useRef<HTMLDivElement>(null);
 
   const [excludedHeight, setExcludedHeight] = useState<number>(0);

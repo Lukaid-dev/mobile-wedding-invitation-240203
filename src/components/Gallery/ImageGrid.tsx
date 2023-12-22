@@ -1,19 +1,37 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { getDownloadURL, listAll, ref } from 'firebase/storage';
 import { storage } from '../../firebase';
 
 import spinner from '../../assets/spinner.svg';
+import ImageModal from './ImageModal';
 
-type images = {
-  [key: string]: {
-    thumbnail: string;
-    main: string;
-  };
-};
+import { images } from '../../types';
 
 export default function ImageGrid() {
-  const [images, setImages] = useState<images>({});
   const [loading, setLoading] = useState(true);
+
+  // images
+  const [images, setImages] = useState<images>({});
+  const [imageKeys, setImageKeys] = useState<string[]>([]);
+
+  // modal
+  const [currentImageIdx, setCurrentImageIdx] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
+  const modalOverlayRef = useRef<HTMLDivElement>(null);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const modalOutsideClick = (arg: React.MouseEvent<HTMLDivElement>) => {
+    if (arg.target === modalOverlayRef.current) {
+      closeModal();
+    }
+  };
 
   useEffect(() => {
     const mainRef = ref(storage, '/main');
@@ -52,6 +70,10 @@ export default function ImageGrid() {
     fetchData();
   }, []); // Run only once on mount
 
+  useEffect(() => {
+    setImageKeys(Object.keys(images));
+  }, [images]);
+
   // 1초뒤에 loading을 false로 바꿔줌
   useEffect(() => {
     setTimeout(() => {
@@ -61,19 +83,35 @@ export default function ImageGrid() {
 
   return loading ? (
     <div className="flex items-center justify-center">
-      <img src={spinner} alt="" className="w-10" />
+      <img src={spinner} alt="spinner" className="w-10" />
     </div>
   ) : (
-    <div className="grid grid-cols-3 gap-[2px]">
-      {Object.keys(images).map((key) => (
-        <div key={key} className="aspect-ratio-1/1 relative overflow-hidden">
-          <img
-            src={images[key].thumbnail}
-            alt={`Photo ${key + 1}`}
-            className="h-full w-full object-cover"
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-3 gap-[2px]">
+        {imageKeys.map((key, idx) => (
+          <div key={idx} className="aspect-ratio-1/1 relative overflow-hidden">
+            <img
+              src={images[key].thumbnail}
+              alt={`Photo ${idx + 1}`}
+              className="h-full w-full object-cover"
+              onClick={() => {
+                setCurrentImageIdx(idx);
+                openModal();
+              }}
+            />
+          </div>
+        ))}
+      </div>
+      {modalOpen && (
+        <ImageModal
+          images={images}
+          imageKeys={imageKeys}
+          currentImageIdx={currentImageIdx}
+          modalOverlayRef={modalOverlayRef}
+          closeModal={closeModal}
+          modalOutsideClick={modalOutsideClick}
+        />
+      )}
+    </>
   );
 }
