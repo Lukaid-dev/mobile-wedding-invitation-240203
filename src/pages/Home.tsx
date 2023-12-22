@@ -5,7 +5,7 @@ import Divider from '../components/Divider';
 export default function Home() {
   const [height, setHeight] = useState(window.innerHeight);
 
-  const dDay = new Date('2024-02-03T15:20:00+09:00');
+  const dDay = new Date('2024-02-03T00:00:00+09:00');
   const today = new Date();
   const diff = Math.ceil(
     (dDay.getTime() - today.getTime()) / (1000 * 3600 * 24),

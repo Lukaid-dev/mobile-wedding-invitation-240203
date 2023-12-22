@@ -10,7 +10,7 @@ export default {
     },
     colors: {
       bg: '#DDD8D3',
-      bg_from: 'rgba(152, 96, 11, 0.35) 0%',
+      bg_from: 'rgba(152, 96, 11, 0.22) 0%',
       bg_to: 'rgba(152, 96, 11, 0.00) 100%',
       black: '#000000',
       white: '#FFFFFF',
