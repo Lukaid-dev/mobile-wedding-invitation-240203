@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
-import GuestBook from './pages/GuestBook';
+import GuestBook, { loader } from './pages/GuestBook';
 import App from './App';
 import Invitation from './pages/Invitation';
 import Gallery from './pages/Gallery';
@@ -29,7 +29,11 @@ export const router = createBrowserRouter([
         path: '/Gallery',
         element: <Gallery />,
       },
-      { path: '/Guestbook', element: <GuestBook /> },
+      {
+        path: '/Guestbook',
+        element: <GuestBook />,
+        loader: loader,
+      },
     ],
   },
 ]);

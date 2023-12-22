@@ -1,12 +1,14 @@
-import { DocumentData } from 'firebase/firestore';
 import { useEffect, useRef, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import { DocumentData } from 'firebase/firestore';
+import DeleteModal from '../components/GuestBook/DeleteModal';
+import BottomInputBar from '../components/GuestBook/BottomInputBar';
+import CommentList from '../components/GuestBook/CommentList';
 import { GuestBookEntry } from '../types';
 import { getGuestBookEntries } from '../api';
-import DeleteModal from '../components/GuestBook/DeleteModal';
-import Card from '../components/GuestBook/Card';
-import BottomInputBar from '../components/GuestBook/BottomInputBar';
 
 export default function GuestBook() {
+  const entries = useLoaderData() as GuestBookEntry[];
   const [guestbookEntries, setGuestbookEntries] = useState<DocumentData>([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [guestbookEntryId, setGuestbookEntryId] = useState('');
@@ -31,12 +33,8 @@ export default function GuestBook() {
   };
 
   useEffect(() => {
-    const fetchGuestbookEntries = async () => {
-      const entries = await getGuestBookEntries();
-      setGuestbookEntries(entries);
-    };
-    fetchGuestbookEntries();
-  }, []);
+    setGuestbookEntries(entries);
+  }, [entries]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -57,29 +55,13 @@ export default function GuestBook() {
   }, []);
 
   return (
-    <div className=" flex flex-col">
-      <ul
-        className="flex flex-col gap-4 overflow-auto px-4 pb-4 pt-4"
-        style={{
-          height: `calc(${excludedHeight}px - 4rem)`,
-          overflowY: 'scroll',
-          scrollBehavior: 'smooth',
-        }}>
-        {guestbookEntries.map((entries: GuestBookEntry) => (
-          <li key={entries.salt}>
-            <Card
-              name={entries.name}
-              text={entries.text}
-              createdAt={entries.createdAt}
-              id={entries.salt}
-              openModal={openModal}
-            />
-          </li>
-        ))}
-      </ul>
-
+    <>
+      <CommentList
+        guestbookEntries={guestbookEntries}
+        openModal={openModal}
+        excludedHeight={excludedHeight}
+      />
       <BottomInputBar ref={ref} setGuestbookEntries={setGuestbookEntries} />
-
       {modalOpen && (
         <DeleteModal
           modalOverlayRef={modalOverlayRef}
@@ -88,6 +70,11 @@ export default function GuestBook() {
           guestbookEntryId={guestbookEntryId}
         />
       )}
-    </div>
+    </>
   );
+}
+
+export async function loader() {
+  const entries = await getGuestBookEntries();
+  return entries;
 }
