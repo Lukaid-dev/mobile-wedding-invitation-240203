@@ -25,7 +25,10 @@ export const router = createBrowserRouter([
         path: '/Invitation',
         element: <Invitation />,
       },
-      { path: '/Gallery', element: <Gallery /> },
+      {
+        path: '/Gallery',
+        element: <Gallery />,
+      },
       { path: '/Guestbook', element: <GuestBook /> },
     ],
   },

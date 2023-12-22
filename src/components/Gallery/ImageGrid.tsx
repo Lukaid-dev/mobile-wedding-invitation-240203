@@ -1,6 +1,8 @@
-import React, { createContext, useEffect, useState } from 'react';
-import { storage } from '../firebase';
-import { ref, getDownloadURL, listAll } from 'firebase/storage';
+import { useEffect, useState } from 'react';
+import { getDownloadURL, listAll, ref } from 'firebase/storage';
+import { storage } from '../../firebase';
+
+import spinner from '../../assets/spinner.svg';
 
 type images = {
   [key: string]: {
@@ -9,18 +11,9 @@ type images = {
   };
 };
 
-export interface IImage {
-  images: images;
-}
-
-export interface AuthProviderProps {
-  children: React.ReactNode;
-}
-
-export const ImageContext = createContext<IImage>({} as IImage);
-
-export const ImageProvider: React.FC<AuthProviderProps> = ({ children }) => {
+export default function ImageGrid() {
   const [images, setImages] = useState<images>({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const mainRef = ref(storage, '/main');
@@ -56,11 +49,31 @@ export const ImageProvider: React.FC<AuthProviderProps> = ({ children }) => {
         }));
       });
     };
-
     fetchData();
   }, []); // Run only once on mount
 
-  return (
-    <ImageContext.Provider value={{ images }}>{children}</ImageContext.Provider>
+  // 1초뒤에 loading을 false로 바꿔줌
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+
+  return loading ? (
+    <div className="flex items-center justify-center">
+      <img src={spinner} alt="" className="w-10" />
+    </div>
+  ) : (
+    <div className="grid grid-cols-3 gap-[2px]">
+      {Object.keys(images).map((key) => (
+        <div key={key} className="aspect-ratio-1/1 relative overflow-hidden">
+          <img
+            src={images[key].thumbnail}
+            alt={`Photo ${key + 1}`}
+            className="h-full w-full object-cover"
+          />
+        </div>
+      ))}
+    </div>
   );
-};
+}
