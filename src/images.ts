@@ -49,91 +49,91 @@ import main_106 from './assets/1000/main_106.jpg';
 import main_107 from './assets/1000/main_107.jpg';
 
 export const images: imagesType = {
-  1: {
+  '001': {
     thumbnail: thumbnail_001,
     main: main_001,
   },
-  2: {
+  '002': {
     thumbnail: thumbnail_002,
     main: main_002,
   },
-  3: {
+  '003': {
     thumbnail: thumbnail_003,
     main: main_003,
   },
-  4: {
+  '004': {
     thumbnail: thumbnail_004,
     main: main_004,
   },
-  5: {
+  '005': {
     thumbnail: thumbnail_005,
     main: main_005,
   },
-  6: {
+  '006': {
     thumbnail: thumbnail_006,
     main: main_006,
   },
-  7: {
+  '007': {
     thumbnail: thumbnail_007,
     main: main_007,
   },
-  8: {
+  '008': {
     thumbnail: thumbnail_008,
     main: main_008,
   },
-  9: {
+  '009': {
     thumbnail: thumbnail_009,
     main: main_009,
   },
-  10: {
+  '010': {
     thumbnail: thumbnail_010,
     main: main_010,
   },
-  11: {
+  '011': {
     thumbnail: thumbnail_011,
     main: main_011,
   },
-  12: {
+  '012': {
     thumbnail: thumbnail_012,
     main: main_012,
   },
-  13: {
+  '013': {
     thumbnail: thumbnail_013,
     main: main_013,
   },
-  14: {
+  '014': {
     thumbnail: thumbnail_014,
     main: main_014,
   },
-  15: {
+  '015': {
     thumbnail: thumbnail_015,
     main: main_015,
   },
-  101: {
+  '101': {
     thumbnail: thumbnail_101,
     main: main_101,
   },
-  // 102: {
+  // "102": {
   //   thumbnail: thumbnail_102,
   //   main: main_102,
   // },
-  103: {
+  '103': {
     thumbnail: thumbnail_103,
     main: main_103,
   },
-  104: {
+  '104': {
     thumbnail: thumbnail_104,
     main: main_104,
   },
-  105: {
+  '105': {
     thumbnail: thumbnail_105,
     main: main_105,
   },
-  106: {
+  '106': {
     thumbnail: thumbnail_106,
     main: main_106,
   },
-  107: {
+  '107': {
     thumbnail: thumbnail_107,
     main: main_107,
   },
