@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import NextButton from '../components/NextButton';
 import Divider from '../components/Divider';
 
+import main from '../assets/main.png';
+
 export default function Home() {
   const [height, setHeight] = useState(window.innerHeight);
 
@@ -28,7 +30,7 @@ export default function Home() {
       id="home-page"
       className="relative flex flex-col items-center"
       style={{
-        backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/wedding-invitation-240203.appspot.com/o/main.png?alt=media&token=a074f85c-b82b-4e6c-adb8-43067c9c222a)`,
+        backgroundImage: `url(${main})`,
         backgroundSize: '90% auto',
         backgroundPosition: 'bottom',
         backgroundRepeat: 'no-repeat',

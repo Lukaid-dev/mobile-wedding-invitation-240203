@@ -15,6 +15,18 @@
   }
 }
 
+:root {
+  color-scheme: light only;
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background: #fff !important;
+    background-color: #fff !important;
+  }
+}
+
 .animate-fadeInOut {
   animation: fadeInOut 0.5s ease-in-out; /* 원하는 지속 시간 및 타이밍 함수 사용 */
 }

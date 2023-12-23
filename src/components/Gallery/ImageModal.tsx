@@ -1,12 +1,12 @@
 // import { useState } from 'react';
 
-import { images } from '../../types';
+import { imagesType } from '../../types';
 import x from '../../assets/x.svg';
 // import chevronLeft from '../../assets/chevronLeft.png';
 // import chevronRight from '../../assets/chevronRight.png';
 
 interface ImageModalProps {
-  images: images;
+  images: imagesType;
   imageKeys: string[];
   currentImageIdx: number;
   modalOverlayRef: React.RefObject<HTMLDivElement>;
@@ -78,7 +78,7 @@ export default function ImageModal({
       }}>
       <img
         src={x}
-        className="absolute right-10 top-10 z-[100] h-8 w-8"
+        className="absolute right-5 top-5 z-[100] h-8 w-8"
         onClick={closeModal}
       />
       {/* <div

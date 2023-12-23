@@ -35,7 +35,7 @@ export interface GuestBookEntry {
   deletedAt?: string;
 }
 
-export type images = {
+export type imagesType = {
   [key: string]: {
     thumbnail: string;
     main: string;
