@@ -46,13 +46,11 @@ export default function ImageModal({
   closeModal,
   modalOutsideClick,
 }: ImageModalProps) {
-  let touchStartX: number;
-  let touchEndX: number;
+  const [touchX, setTouchX] = useState(0);
 
   const [currIndex, setCurrIndex] = useState(currentImageIdx);
 
   const nextHandler = () => {
-    console.log(currIndex);
     if (currIndex === imageKeys.length - 1) {
       setCurrIndex(0);
     } else {
@@ -61,8 +59,6 @@ export default function ImageModal({
   };
 
   const prevHandler = () => {
-    console.log(currIndex);
-
     if (currIndex === 0) {
       setCurrIndex(imageKeys.length - 1);
     } else {
@@ -71,13 +67,13 @@ export default function ImageModal({
   };
 
   const handleTouchStart: TouchEventHandler<HTMLDivElement> = (e) => {
-    touchStartX = e.nativeEvent.touches[0].clientX;
+    setTouchX(e.changedTouches[0].pageX);
   };
 
   const handleTouchEnd: TouchEventHandler<HTMLDivElement> = (e) => {
-    touchEndX = e.nativeEvent.changedTouches[0].clientX;
+    const distanceX = touchX - e.changedTouches[0].pageX;
 
-    if (touchStartX >= touchEndX) {
+    if (distanceX > 0) {
       nextHandler();
     } else {
       prevHandler();
@@ -88,8 +84,6 @@ export default function ImageModal({
     <div
       ref={modalOverlayRef}
       onClick={modalOutsideClick}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
       className="fixed inset-0 z-50 flex h-[100vh] items-center justify-center bg-black/50"
       style={{
         backdropFilter: 'blur(2px)',
@@ -101,7 +95,9 @@ export default function ImageModal({
         onClick={closeModal}
       />
       <div
-        className={`flex  items-center transition duration-500 ease-in-out ${moveStyle[currIndex]}`}>
+        className={`flex items-center transition duration-500 ease-in-out ${moveStyle[currIndex]}`}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}>
         {images}
       </div>
       <button

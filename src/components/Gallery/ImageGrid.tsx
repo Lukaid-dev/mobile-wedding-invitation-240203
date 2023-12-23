@@ -30,6 +30,8 @@ export default function ImageGrid() {
 
   const closeModal = () => {
     setModalOpen(false);
+    // 모달이 닫혔을 때, 스크롤을 허용한다.
+    document.body.style.overflow = 'auto';
   };
 
   const modalOutsideClick = (arg: React.MouseEvent<HTMLDivElement>) => {

@@ -41,3 +41,5 @@ export type imagesType = {
     main: string;
   };
 };
+
+export type who = 'groom' | 'bride' | 'choi' | 'park' | 'moon';

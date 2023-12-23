@@ -5,6 +5,7 @@ import Bank from '../components/Invitation/Bank';
 import Map from '../components/Invitation/Map';
 import NextButton from '../components/NextButton';
 import Share from '../components/Invitation/Share';
+import MadeBy from '../components/Invitation/MadeBy';
 
 export default function Invitation() {
   return (
@@ -21,6 +22,7 @@ export default function Invitation() {
         bg="bg-red"
         textColor="text-white"
       />
+      <MadeBy />
     </div>
   );
 }

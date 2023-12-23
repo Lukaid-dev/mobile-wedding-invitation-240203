@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import github from '../../assets/github.png';
 import kakaoLogo from '../../assets/kakao.svg';
 
 declare global {
@@ -13,8 +12,6 @@ const { Kakao } = window;
 
 const Share = () => {
   const url = 'https://wedding-invitation-240203.web.app/Home';
-  const githubUrl =
-    'https://github.com/Lukaid-dev/mobile-wedding-invitation-240203';
 
   useEffect(() => {
     Kakao.cleanup();
@@ -49,18 +46,12 @@ const Share = () => {
   return (
     <div className="flex w-full gap-2">
       <div
-        className="flex h-10 w-full items-center justify-center gap-1 rounded-lg bg-yellow"
+        className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-yellow"
         onClick={() => {
           shareKakao();
         }}>
         <img src={kakaoLogo} alt="kakaoLogo" className="h-6" />
-      </div>
-      <div
-        className="flex h-10 w-full items-center justify-center rounded-lg border"
-        onClick={() => {
-          window.open(githubUrl);
-        }}>
-        <img src={github} alt="github" className="h-6" />
+        <div>카카오톡 공유하기</div>
       </div>
     </div>
   );
