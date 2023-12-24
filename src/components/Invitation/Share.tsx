@@ -46,7 +46,7 @@ const Share = () => {
   return (
     <div className="flex w-full gap-2">
       <div
-        className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-yellow"
+        className="flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-yellow shadow-lg"
         onClick={() => {
           shareKakao();
         }}>
