@@ -38,19 +38,19 @@ export default function ContactCard({ name, who }: { name: string; who: who }) {
     if (isMobile) {
       switch (who) {
         case 'groom':
-          window.open(`sms:${import.meta.env.VITE_GROOM_PHONE}`);
+          window.open(`sms:${import.meta.env.VITE_PHONE_GROOM}`);
           break;
         case 'bride':
-          window.open(`sms:${import.meta.env.VITE_BRIDE_PHONE}`);
+          window.open(`sms:${import.meta.env.VITE_PHONE_BRIDE}`);
           break;
         case 'choi':
-          window.open(`sms:${import.meta.env.VITE_CHOI_PHONE}`);
+          window.open(`sms:${import.meta.env.VITE_PHONE_CHOI}`);
           break;
         case 'park':
-          window.open(`sms:${import.meta.env.VITE_PARK_PHONE}`);
+          window.open(`sms:${import.meta.env.VITE_PHONE_PARK}`);
           break;
         case 'moon':
-          window.open(`sms:${import.meta.env.VITE_MOON_PHONE}`);
+          window.open(`sms:${import.meta.env.VITE_PHONE_MOON}`);
           break;
       }
     } else {
