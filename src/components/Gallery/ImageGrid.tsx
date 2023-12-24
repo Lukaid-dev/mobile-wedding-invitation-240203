@@ -20,8 +20,6 @@ export default function ImageGrid() {
         position: 'bottom-center',
         icon: '🔥',
       });
-
-      return;
     }
     setModalOpen(true);
     // 모달이 열렸을 때, 스크롤을 막아준다.
@@ -42,17 +40,28 @@ export default function ImageGrid() {
 
   // modal에서 사용될 이미지들 미리 로딩
   useEffect(() => {
+    let loadCount = 0;
+
     const imageLists: ReactNode[] = imageKeys.map((key, idx) => (
       <div key={idx} className={`flex w-[100vw] justify-center`}>
         <img
           src={images[key].main}
           className="w-[80vw]"
           alt={`Photo ${idx + 1}`}
+          onLoad={() => {
+            loadCount++;
+            if (loadCount === imageKeys.length) {
+              toast('이미지 로딩 완료!', {
+                position: 'bottom-center',
+                icon: '✅',
+              });
+              setIsLoaded(true);
+            }
+          }}
         />
       </div>
     ));
     setModalImage(imageLists);
-    setIsLoaded(true);
   }, []);
 
   return (
@@ -65,7 +74,6 @@ export default function ImageGrid() {
               alt={`Photo ${idx + 1}`}
               className="h-full w-full object-cover"
               onClick={() => {
-                console.log(idx);
                 setCurrentImageIdx(idx);
                 openModal();
               }}

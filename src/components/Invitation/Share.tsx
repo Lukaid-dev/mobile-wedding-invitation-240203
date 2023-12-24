@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import kakaoLogo from '../../assets/kakao.svg';
+import kakaoLogo from '../../assets/kakao.png';
 
 declare global {
   interface Window {
@@ -50,7 +50,7 @@ const Share = () => {
         onClick={() => {
           shareKakao();
         }}>
-        <img src={kakaoLogo} alt="kakaoLogo" className="h-6" />
+        <img src={kakaoLogo} alt="kakaoLogo" className="h-4" />
         <div>카카오톡 공유하기</div>
       </div>
     </div>
