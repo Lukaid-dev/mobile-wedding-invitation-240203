@@ -18,7 +18,7 @@ export default function ImageGrid() {
     if (!isLoaded) {
       toast('이미지를 불러오는 중이에요!', {
         position: 'bottom-center',
-        icon: '🔥',
+        icon: '🤵❤️👰‍♀️',
       });
     }
     setModalOpen(true);
@@ -53,7 +53,7 @@ export default function ImageGrid() {
             if (loadCount === imageKeys.length) {
               toast('이미지 로딩 완료!', {
                 position: 'bottom-center',
-                icon: '✅',
+                icon: '💍',
               });
               setIsLoaded(true);
             }

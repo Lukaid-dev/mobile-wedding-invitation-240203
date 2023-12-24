@@ -50,14 +50,14 @@ export default function Map() {
             <img
               src={naverMap}
               alt="네이버 지도"
-              className="h-10 w-10 shadow-lg"
+              className="h-10 w-10 rounded-lg shadow-lg"
             />
           </a>
           <a href="https://kko.to/ZtD3GTCY6-" target="_blank" rel="noreferrer">
             <img
               src={kakaoMap}
               alt="카카오 지도"
-              className="h-10 w-10 shadow-lg"
+              className="h-10 w-10 rounded-lg shadow-lg"
             />
           </a>
         </div>
