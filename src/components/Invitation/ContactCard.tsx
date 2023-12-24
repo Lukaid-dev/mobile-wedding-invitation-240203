@@ -59,16 +59,16 @@ export default function ContactCard({ name, who }: { name: string; who: who }) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4 ">
-      <div>{name} 연락하기</div>
-      <div className="flex gap-4">
+    <div className="flex items-center justify-center gap-4 ">
+      <div className="flex w-[50%] justify-end">{name} 연락하기</div>
+      <div className="flex w-[50%] justify-center gap-8">
         <div className="flex flex-col items-center justify-center gap-1">
           <div
-            className="flex h-[56px] w-[56px] items-center justify-center rounded-full bg-gray-50 hover:bg-gray-200"
+            className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-gray-50 hover:bg-gray-200"
             onClick={() => {
               call(who);
             }}>
-            <img src={phone} alt="Phone" className="w-[28px]" />
+            <img src={phone} alt="Phone" className="w-[16px]" />
           </div>
           <div
             className="font-sans"
@@ -77,17 +77,15 @@ export default function ContactCard({ name, who }: { name: string; who: who }) {
               fontStyle: 'normal',
               fontWeight: 400,
               lineHeight: '19.5px',
-            }}>
-            통화하기
-          </div>
+            }}></div>
         </div>
         <div className="flex flex-col items-center justify-center gap-1">
           <div
-            className="flex h-[56px] w-[56px] items-center justify-center rounded-full bg-gray-50 hover:bg-gray-200"
+            className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-gray-50 hover:bg-gray-200"
             onClick={() => {
               message(who);
             }}>
-            <img src={chat} alt="Chat" className="w-[28px]" />
+            <img src={chat} alt="Chat" className="w-[16px]" />
           </div>
           <div
             className="font-sans"
@@ -96,9 +94,7 @@ export default function ContactCard({ name, who }: { name: string; who: who }) {
               fontStyle: 'normal',
               fontWeight: 400,
               lineHeight: '19.5px',
-            }}>
-            문자하기
-          </div>
+            }}></div>
         </div>
       </div>
     </div>

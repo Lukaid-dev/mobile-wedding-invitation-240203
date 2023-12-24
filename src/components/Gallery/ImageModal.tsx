@@ -1,6 +1,5 @@
 import { ReactNode, TouchEventHandler, useState } from 'react';
 
-// import { imagesType } from '../../types';
 import x from '../../assets/x.svg';
 import chevronLeft from '../../assets/chevronLeft.png';
 import chevronRight from '../../assets/chevronRight.png';
@@ -15,27 +14,26 @@ interface ImageModalProps {
 }
 
 const moveStyle: { [key: number]: string } = {
-  0: 'translate-x-[1000vw]',
-  1: 'translate-x-[900vw]',
-  2: 'translate-x-[800vw]',
-  3: 'translate-x-[700vw]',
-  4: 'translate-x-[600vw]',
-  5: 'translate-x-[500vw]',
-  6: 'translate-x-[400vw]',
-  7: 'translate-x-[300vw]',
-  8: 'translate-x-[200vw]',
-  9: 'translate-x-[100vw]',
-  10: 'translate-x-0',
-  11: 'translate-x-[-100vw]',
-  12: 'translate-x-[-200vw]',
-  13: 'translate-x-[-300vw]',
-  14: 'translate-x-[-400vw]',
-  15: 'translate-x-[-500vw]',
-  16: 'translate-x-[-600vw]',
-  17: 'translate-x-[-700vw]',
-  18: 'translate-x-[-800vw]',
-  19: 'translate-x-[-900vw]',
-  20: 'translate-x-[-1000vw]',
+  0: 'translate-x-[950vw]',
+  1: 'translate-x-[850vw]',
+  2: 'translate-x-[750vw]',
+  3: 'translate-x-[650vw]',
+  4: 'translate-x-[550vw]',
+  5: 'translate-x-[450vw]',
+  6: 'translate-x-[350vw]',
+  7: 'translate-x-[250vw]',
+  8: 'translate-x-[150vw]',
+  9: 'translate-x-[50vw]',
+  10: 'translate-x-[-50vw]',
+  11: 'translate-x-[-150vw]',
+  12: 'translate-x-[-250vw]',
+  13: 'translate-x-[-350vw]',
+  14: 'translate-x-[-450vw]',
+  15: 'translate-x-[-550vw]',
+  16: 'translate-x-[-650vw]',
+  17: 'translate-x-[-750vw]',
+  18: 'translate-x-[-850vw]',
+  19: 'translate-x-[-950vw]',
 };
 
 export default function ImageModal({

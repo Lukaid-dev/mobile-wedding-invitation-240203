@@ -1,140 +1,128 @@
 import { imagesType } from './types';
 
-import thumbnail_001 from './assets/250/thumbnail_001.jpg';
-import thumbnail_002 from './assets/250/thumbnail_002.jpg';
-import thumbnail_003 from './assets/250/thumbnail_003.jpg';
-import thumbnail_004 from './assets/250/thumbnail_004.jpg';
-import thumbnail_005 from './assets/250/thumbnail_005.jpg';
-import thumbnail_006 from './assets/250/thumbnail_006.jpg';
-import thumbnail_007 from './assets/250/thumbnail_007.jpg';
-import thumbnail_008 from './assets/250/thumbnail_008.jpg';
-import thumbnail_009 from './assets/250/thumbnail_009.jpg';
-import thumbnail_010 from './assets/250/thumbnail_010.jpg';
-import thumbnail_011 from './assets/250/thumbnail_011.jpg';
-import thumbnail_012 from './assets/250/thumbnail_012.jpg';
-import thumbnail_013 from './assets/250/thumbnail_013.jpg';
-import thumbnail_014 from './assets/250/thumbnail_014.jpg';
-import thumbnail_015 from './assets/250/thumbnail_015.jpg';
+// Thumbnail
+import thumbnail_01 from './assets/250/thumbnail_01.jpg';
+import thumbnail_02 from './assets/250/thumbnail_02.jpg';
+import thumbnail_03 from './assets/250/thumbnail_03.jpg';
+import thumbnail_04 from './assets/250/thumbnail_04.jpg';
+import thumbnail_05 from './assets/250/thumbnail_05.jpg';
+import thumbnail_06 from './assets/250/thumbnail_06.jpg';
+import thumbnail_07 from './assets/250/thumbnail_07.jpg';
+import thumbnail_08 from './assets/250/thumbnail_08.jpg';
+import thumbnail_09 from './assets/250/thumbnail_09.jpg';
+import thumbnail_10 from './assets/250/thumbnail_10.jpg';
+import thumbnail_11 from './assets/250/thumbnail_11.jpg';
+import thumbnail_12 from './assets/250/thumbnail_12.jpg';
+import thumbnail_13 from './assets/250/thumbnail_13.jpg';
+import thumbnail_14 from './assets/250/thumbnail_14.jpg';
+import thumbnail_15 from './assets/250/thumbnail_15.jpg';
+import thumbnail_16 from './assets/250/thumbnail_16.jpg';
+import thumbnail_17 from './assets/250/thumbnail_17.jpg';
+import thumbnail_18 from './assets/250/thumbnail_18.jpg';
+import thumbnail_19 from './assets/250/thumbnail_19.jpg';
+import thumbnail_20 from './assets/250/thumbnail_20.jpg';
 
-import thumbnail_101 from './assets/250/thumbnail_101.jpg';
-// import thumbnail_102 from './assets/250/thumbnail_102.jpg';
-import thumbnail_103 from './assets/250/thumbnail_103.jpg';
-import thumbnail_104 from './assets/250/thumbnail_104.jpg';
-import thumbnail_105 from './assets/250/thumbnail_105.jpg';
-import thumbnail_106 from './assets/250/thumbnail_106.jpg';
-import thumbnail_107 from './assets/250/thumbnail_107.jpg';
-
-import main_001 from './assets/1000/main_001.jpg';
-import main_002 from './assets/1000/main_002.jpg';
-import main_003 from './assets/1000/main_003.jpg';
-import main_004 from './assets/1000/main_004.jpg';
-import main_005 from './assets/1000/main_005.jpg';
-import main_006 from './assets/1000/main_006.jpg';
-import main_007 from './assets/1000/main_007.jpg';
-import main_008 from './assets/1000/main_008.jpg';
-import main_009 from './assets/1000/main_009.jpg';
-import main_010 from './assets/1000/main_010.jpg';
-import main_011 from './assets/1000/main_011.jpg';
-import main_012 from './assets/1000/main_012.jpg';
-import main_013 from './assets/1000/main_013.jpg';
-import main_014 from './assets/1000/main_014.jpg';
-import main_015 from './assets/1000/main_015.jpg';
-
-import main_101 from './assets/1000/main_101.jpg';
-// import main_102 from './assets/1000/main_102.jpg';
-import main_103 from './assets/1000/main_103.jpg';
-import main_104 from './assets/1000/main_104.jpg';
-import main_105 from './assets/1000/main_105.jpg';
-import main_106 from './assets/1000/main_106.jpg';
-import main_107 from './assets/1000/main_107.jpg';
+// Main
+import main_01 from './assets/1000/main_01.jpg';
+import main_02 from './assets/1000/main_02.jpg';
+import main_03 from './assets/1000/main_03.jpg';
+import main_04 from './assets/1000/main_04.jpg';
+import main_05 from './assets/1000/main_05.jpg';
+import main_06 from './assets/1000/main_06.jpg';
+import main_07 from './assets/1000/main_07.jpg';
+import main_08 from './assets/1000/main_08.jpg';
+import main_09 from './assets/1000/main_09.jpg';
+import main_10 from './assets/1000/main_10.jpg';
+import main_11 from './assets/1000/main_11.jpg';
+import main_12 from './assets/1000/main_12.jpg';
+import main_13 from './assets/1000/main_13.jpg';
+import main_14 from './assets/1000/main_14.jpg';
+import main_15 from './assets/1000/main_15.jpg';
+import main_16 from './assets/1000/main_16.jpg';
+import main_17 from './assets/1000/main_17.jpg';
+import main_18 from './assets/1000/main_18.jpg';
+import main_19 from './assets/1000/main_19.jpg';
+import main_20 from './assets/1000/main_20.jpg';
 
 export const images: imagesType = {
-  '001': {
-    thumbnail: thumbnail_001,
-    main: main_001,
+  '01': {
+    thumbnail: thumbnail_01,
+    main: main_01,
   },
-  '002': {
-    thumbnail: thumbnail_002,
-    main: main_002,
+  '02': {
+    thumbnail: thumbnail_02,
+    main: main_02,
   },
-  '003': {
-    thumbnail: thumbnail_003,
-    main: main_003,
+  '03': {
+    thumbnail: thumbnail_03,
+    main: main_03,
   },
-  '004': {
-    thumbnail: thumbnail_004,
-    main: main_004,
+  '04': {
+    thumbnail: thumbnail_04,
+    main: main_04,
   },
-  '005': {
-    thumbnail: thumbnail_005,
-    main: main_005,
+  '05': {
+    thumbnail: thumbnail_05,
+    main: main_05,
   },
-  '006': {
-    thumbnail: thumbnail_006,
-    main: main_006,
+  '06': {
+    thumbnail: thumbnail_06,
+    main: main_06,
   },
-  '007': {
-    thumbnail: thumbnail_007,
-    main: main_007,
+  '07': {
+    thumbnail: thumbnail_07,
+    main: main_07,
   },
-  '008': {
-    thumbnail: thumbnail_008,
-    main: main_008,
+  '08': {
+    thumbnail: thumbnail_08,
+    main: main_08,
   },
-  '009': {
-    thumbnail: thumbnail_009,
-    main: main_009,
+  '09': {
+    thumbnail: thumbnail_09,
+    main: main_09,
   },
-  '010': {
-    thumbnail: thumbnail_010,
-    main: main_010,
+  '10': {
+    thumbnail: thumbnail_10,
+    main: main_10,
   },
-  '011': {
-    thumbnail: thumbnail_011,
-    main: main_011,
+  '11': {
+    thumbnail: thumbnail_11,
+    main: main_11,
   },
-  '012': {
-    thumbnail: thumbnail_012,
-    main: main_012,
+  '12': {
+    thumbnail: thumbnail_12,
+    main: main_12,
   },
-  '013': {
-    thumbnail: thumbnail_013,
-    main: main_013,
+  '13': {
+    thumbnail: thumbnail_13,
+    main: main_13,
   },
-  '014': {
-    thumbnail: thumbnail_014,
-    main: main_014,
+  '14': {
+    thumbnail: thumbnail_14,
+    main: main_14,
   },
-  '015': {
-    thumbnail: thumbnail_015,
-    main: main_015,
+  '15': {
+    thumbnail: thumbnail_15,
+    main: main_15,
   },
-  '101': {
-    thumbnail: thumbnail_101,
-    main: main_101,
+  '16': {
+    thumbnail: thumbnail_16,
+    main: main_16,
   },
-  // "102": {
-  //   thumbnail: thumbnail_102,
-  //   main: main_102,
-  // },
-  '103': {
-    thumbnail: thumbnail_103,
-    main: main_103,
+  '17': {
+    thumbnail: thumbnail_17,
+    main: main_17,
   },
-  '104': {
-    thumbnail: thumbnail_104,
-    main: main_104,
+  '18': {
+    thumbnail: thumbnail_18,
+    main: main_18,
   },
-  '105': {
-    thumbnail: thumbnail_105,
-    main: main_105,
+  '19': {
+    thumbnail: thumbnail_19,
+    main: main_19,
   },
-  '106': {
-    thumbnail: thumbnail_106,
-    main: main_106,
-  },
-  '107': {
-    thumbnail: thumbnail_107,
-    main: main_107,
+  '20': {
+    thumbnail: thumbnail_20,
+    main: main_20,
   },
 };

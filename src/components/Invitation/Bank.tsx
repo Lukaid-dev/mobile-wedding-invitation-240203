@@ -14,9 +14,9 @@ export default function Bank() {
 
   return (
     <Box title="마음 전하실 곳">
-      <div className="my-[26px] flex w-full flex-col gap-4 font-sans">
+      <div className="mt-[26px] flex w-full flex-col gap-4 font-sans">
         <div className="flex w-full justify-between">
-          <div className="font-sans font-bold">신랑 측 계좌번호</div>
+          <div className="font-sans">신랑 측 계좌번호</div>
           <button
             onClick={(e) => {
               e.preventDefault();
@@ -74,9 +74,9 @@ export default function Bank() {
         </div>
       </div>
 
-      <div className="my-[26px] flex w-full flex-col gap-4 font-sans">
+      <div className="mt-[26px] flex w-full flex-col gap-4 font-sans">
         <div className="flex w-full justify-between">
-          <div className="font-sans font-bold">신부 측 계좌번호</div>
+          <div className="font-sans">신부 측 계좌번호</div>
           <button
             onClick={(e) => {
               e.preventDefault();
