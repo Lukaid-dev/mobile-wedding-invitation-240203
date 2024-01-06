@@ -79,11 +79,11 @@
 
 <br>
 
-<div>
-  <div style="display: flex; justify-content: center; align-items: flex-start; gap: 4px;">
-    <img src="https://firebasestorage.googleapis.com/v0/b/wedding-invitation-240203.appspot.com/o/demo_home.png?alt=media&token=93739441-2972-4509-94df-43b0dfc2df7f" width="200" alt="demo_home">
-    <img src="https://firebasestorage.googleapis.com/v0/b/wedding-invitation-240203.appspot.com/o/demo_invitation.jpeg?alt=media&token=43f272cc-8d12-4fcc-86ad-163b5b1b0b46" width="200" alt="demo_invitation">
-    <img src="https://firebasestorage.googleapis.com/v0/b/wedding-invitation-240203.appspot.com/o/demo_gallery.jpeg?alt=media&token=9674dfc9-5156-4724-aa7d-00cfa9879768" width="200" alt="demo_gallery">
-    <img src="https://firebasestorage.googleapis.com/v0/b/wedding-invitation-240203.appspot.com/o/demo_guestbook.jpeg?alt=media&token=37c56577-06e1-4522-94fd-e40f7f7e2597" width="200" alt="demo_guestbook">
-  </div>
+<div style="display: flex; justify-content: center; align-items: start; gap: 4px;">
+  <img src="https://firebasestorage.googleapis.com/v0/b/wedding-invitation-240203.appspot.com/o/demo_home.png?alt=media&token=93739441-2972-4509-94df-43b0dfc2df7f" width="200" alt="demo_home">
+  <img src="https://firebasestorage.googleapis.com/v0/b/wedding-invitation-240203.appspot.com/o/demo_invitation.jpeg?alt=media&token=43f272cc-8d12-4fcc-86ad-163b5b1b0b46" width="200" alt="demo_invitation">
+  <img src="https://firebasestorage.googleapis.com/v0/b/wedding-invitation-240203.appspot.com/o/demo_gallery.jpeg?alt=media&token=9674dfc9-5156-4724-aa7d-00cfa9879768" width="200" alt="demo_gallery">
+  <img src="https://firebasestorage.googleapis.com/v0/b/wedding-invitation-240203.appspot.com/o/demo_guestbook.jpeg?alt=media&token=37c56577-06e1-4522-94fd-e40f7f7e2597" width="200" alt="demo_guestbook">
 </div>
+
+<br>
