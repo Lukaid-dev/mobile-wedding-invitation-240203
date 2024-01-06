@@ -19,12 +19,12 @@ export default function Map() {
     const mapOptions: naver.maps.MapOptions = {
       center,
       zoom: 16,
-      zoomControl: true,
+      zoomControl: false,
       disableDoubleTapZoom: false,
       disableDoubleClickZoom: false,
       disableTwoFingerTapZoom: false,
       pinchZoom: false,
-      draggable: true,
+      draggable: false,
       scrollWheel: false,
     };
     const map = new naver.maps.Map(mapElement.current, mapOptions);
