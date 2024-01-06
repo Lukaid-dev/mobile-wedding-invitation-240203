@@ -14,18 +14,22 @@
 
 ## dependencies
 
-<!-- react -->
-<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white">
-<!-- react-router-dom -->
-<img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=React-Router&logoColor=white">
-<!-- tailwindcss -->
-<img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=Tailwind-CSS&logoColor=white">
-<!-- firebase -->
-<img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=Firebase&logoColor=white">
-<!-- typescript -->
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white">
-<!-- vite -->
-<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white">
+<div>
+
+  <!-- react -->
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white">
+  <!-- react-router-dom -->
+  <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=React-Router&logoColor=white">
+  <!-- tailwindcss -->
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=Tailwind-CSS&logoColor=white">
+  <!-- firebase -->
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=Firebase&logoColor=white">
+  <!-- typescript -->
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white">
+  <!-- vite -->
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white">
+
+</div>
 
 <br>
 
@@ -66,12 +70,14 @@
 
 <br>
 
-[installation](./doc/installation.md)
-[firebase](./doc/firebase.md)
+- [installation](./doc/installation.md)
+- [firebase](./doc/firebase.md)
 
 <br>
 
 ## preview
+
+<br>
 
 <div style="display: flex; justify-content: center; align-items: flex-start; gap: 4px">
   <img src="https://firebasestorage.googleapis.com/v0/b/wedding-invitation-240203.appspot.com/o/demo_home.png?alt=media&token=93739441-2972-4509-94df-43b0dfc2df7f" width="200">
