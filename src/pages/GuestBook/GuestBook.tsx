@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { DocumentData } from 'firebase/firestore';
-import DeleteModal from '../components/GuestBook/DeleteModal';
-import BottomInputBar from '../components/GuestBook/BottomInputBar';
-import CommentList from '../components/GuestBook/CommentList';
-import { GuestBookEntry } from '../types';
-import { getGuestBookEntries } from '../api';
+import DeleteModal from './DeleteModal';
+import BottomInputBar from './BottomInputBar';
+import CommentList from './CommentList';
+import { GuestBookEntry } from '../../types';
+import { getGuestBookEntries } from '../../api';
 
 export default function GuestBook() {
   const entries = useLoaderData() as GuestBookEntry[];

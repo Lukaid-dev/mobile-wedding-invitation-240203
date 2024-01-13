@@ -1,5 +1,5 @@
 import CopyButton from './CopyButton';
-import Divider from '../Divider';
+import Divider from '../../components/Divider';
 import Box from './Box';
 
 import toss from '../../assets/toss.png';

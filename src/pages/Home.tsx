@@ -12,12 +12,12 @@ export default function Home() {
   const diff = Math.ceil(
     (dDay.getTime() - today.getTime()) / (1000 * 3600 * 24),
   );
+  const updateHeight = () => {
+    const headerHeight = 16 * 4;
+    setHeight(window.innerHeight - headerHeight);
+  };
 
   useEffect(() => {
-    const updateHeight = () => {
-      const headerHeight = 16 * 4;
-      setHeight(window.innerHeight - headerHeight);
-    };
     updateHeight();
     window.addEventListener('resize', updateHeight);
     return () => {

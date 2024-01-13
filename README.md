@@ -39,9 +39,6 @@
 📦 src
  ┣ 📂 assets - 정적파일 및 썸네일 이미지 제공
  ┣ 📂 components
- ┃ ┣ 📂 Gallery
- ┃ ┣ 📂 GuestBook
- ┃ ┣ 📂 Invitation
  ┃ ┣ 📜 Divider.tsx
  ┃ ┗ 📜 NextButton.tsx
  ┣ 📂 contexts
@@ -50,6 +47,10 @@
  ┣ 📂 hooks
  ┃ ┗ 📜 useKakaoInAppBrowserDetect.ts - 카카오 인앱 브라우저 감지 및 기본브라우저로 이동
  ┣ 📂 pages
+ ┃ ┣ 📂 Gallery
+ ┃ ┣ 📂 GuestBook
+ ┃ ┣ 📂 Invitation
+ ┃ ┗ 📜 Home.tsx
  ┣ 📂 styles
  ┃ ┣ 📂 fonts
  ┃ ┣ 📜 fonts.css

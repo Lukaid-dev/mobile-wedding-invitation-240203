@@ -1,5 +1,5 @@
 // import NextButton from '../components/NextButton';
-import ImageGrid from '../components/Gallery/ImageGrid';
+import ImageGrid from './ImageGrid';
 
 export default function Gallery() {
   return (

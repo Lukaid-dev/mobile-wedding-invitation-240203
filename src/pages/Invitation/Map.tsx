@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import Divider from '../Divider';
+import Divider from '../../components/Divider';
 import Box from './Box';
 
 import train from '../../assets/train.svg';

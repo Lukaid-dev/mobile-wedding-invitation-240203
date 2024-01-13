@@ -1,4 +1,4 @@
-import Divider from '../Divider';
+import Divider from '../../components/Divider';
 import Box from './Box';
 import ContactCard from './ContactCard';
 
