@@ -72,7 +72,7 @@ export default function Home() {
             fontWeight: 400,
             lineHeight: '19px',
           }}>
-          D-{diff}
+          {diff < 0 ? `D+${Math.abs(diff)}` : `D-${Math.abs(diff)}`}
         </span>
       </div>
       <NextButton to="/Invitation" text="청첩장 보러가기" />

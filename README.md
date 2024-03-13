@@ -41,8 +41,6 @@
  ┣ 📂 components
  ┃ ┣ 📜 Divider.tsx
  ┃ ┗ 📜 NextButton.tsx
- ┣ 📂 contexts
- ┃ ┗ 📜 ImageProvider.tsx - 이미지를 동적으로 관리하는 것이 아니라 폐기
  ┣ 📂 header
  ┣ 📂 hooks
  ┃ ┗ 📜 useKakaoInAppBrowserDetect.ts - 카카오 인앱 브라우저 감지 및 기본브라우저로 이동
@@ -56,13 +54,14 @@
  ┃ ┣ 📜 fonts.css
  ┃ ┗ 📜 index.css
  ┣ 📂 utils
+ ┃ ┣ 📜 api.ts
+ ┃ ┣ 📜 firebase.ts
+ ┃ ┣ 📜 images.ts
+ ┃ ┣ 📜 KakaoInAppBrowserDetect.tsx
  ┃ ┣ 📜 password.ts
- ┃ ┗ 📜 timeBefore.ts
+ ┃ ┣ 📜 timeBefore.ts
+ ┃ ┗ 📜 types.ts
  ┣ 📜 App.tsx
- ┣ 📜 KakaoInAppBrowserDetect.tsx
- ┣ 📜 api.ts
- ┣ 📜 firebase.ts
- ┣ 📜 images.ts
  ┣ 📜 main.tsx
  ┗ 📜 router.tsx
 ```

@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { INavItem } from '../types';
+import { INavItem } from '../utils/types';
 
 const navList: INavItem[] = [
   {

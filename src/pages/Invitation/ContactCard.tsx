@@ -1,6 +1,6 @@
 import phone from '../../assets/phone.svg';
 import chat from '../../assets/chat.svg';
-import { who } from '../../types';
+import { who } from '../../utils/types';
 import { useEffect, useState } from 'react';
 
 export default function ContactCard({ name, who }: { name: string; who: who }) {

@@ -1,48 +1,26 @@
 import { imagesType } from './types';
 
 // Thumbnail
-import thumbnail_01 from './assets/250/thumbnail_01.jpg';
-import thumbnail_02 from './assets/250/thumbnail_02.jpg';
-import thumbnail_03 from './assets/250/thumbnail_03.jpg';
-import thumbnail_04 from './assets/250/thumbnail_04.jpg';
-import thumbnail_05 from './assets/250/thumbnail_05.jpg';
-import thumbnail_06 from './assets/250/thumbnail_06.jpg';
-import thumbnail_07 from './assets/250/thumbnail_07.jpg';
-import thumbnail_08 from './assets/250/thumbnail_08.jpg';
-import thumbnail_09 from './assets/250/thumbnail_09.jpg';
-import thumbnail_10 from './assets/250/thumbnail_10.jpg';
-import thumbnail_11 from './assets/250/thumbnail_11.jpg';
-import thumbnail_12 from './assets/250/thumbnail_12.jpg';
-import thumbnail_13 from './assets/250/thumbnail_13.jpg';
-import thumbnail_14 from './assets/250/thumbnail_14.jpg';
-import thumbnail_15 from './assets/250/thumbnail_15.jpg';
-import thumbnail_16 from './assets/250/thumbnail_16.jpg';
-import thumbnail_17 from './assets/250/thumbnail_17.jpg';
-import thumbnail_18 from './assets/250/thumbnail_18.jpg';
-import thumbnail_19 from './assets/250/thumbnail_19.jpg';
-import thumbnail_20 from './assets/250/thumbnail_20.jpg';
-
-// Main
-// import main_01 from './assets/1000/main_01.jpg';
-// import main_02 from './assets/1000/main_02.jpg';
-// import main_03 from './assets/1000/main_03.jpg';
-// import main_04 from './assets/1000/main_04.jpg';
-// import main_05 from './assets/1000/main_05.jpg';
-// import main_06 from './assets/1000/main_06.jpg';
-// import main_07 from './assets/1000/main_07.jpg';
-// import main_08 from './assets/1000/main_08.jpg';
-// import main_09 from './assets/1000/main_09.jpg';
-// import main_10 from './assets/1000/main_10.jpg';
-// import main_11 from './assets/1000/main_11.jpg';
-// import main_12 from './assets/1000/main_12.jpg';
-// import main_13 from './assets/1000/main_13.jpg';
-// import main_14 from './assets/1000/main_14.jpg';
-// import main_15 from './assets/1000/main_15.jpg';
-// import main_16 from './assets/1000/main_16.jpg';
-// import main_17 from './assets/1000/main_17.jpg';
-// import main_18 from './assets/1000/main_18.jpg';
-// import main_19 from './assets/1000/main_19.jpg';
-// import main_20 from './assets/1000/main_20.jpg';
+import thumbnail_01 from './../assets/250/thumbnail_01.jpg';
+import thumbnail_02 from './../assets/250/thumbnail_02.jpg';
+import thumbnail_03 from './../assets/250/thumbnail_03.jpg';
+import thumbnail_04 from './../assets/250/thumbnail_04.jpg';
+import thumbnail_05 from './../assets/250/thumbnail_05.jpg';
+import thumbnail_06 from './../assets/250/thumbnail_06.jpg';
+import thumbnail_07 from './../assets/250/thumbnail_07.jpg';
+import thumbnail_08 from './../assets/250/thumbnail_08.jpg';
+import thumbnail_09 from './../assets/250/thumbnail_09.jpg';
+import thumbnail_10 from './../assets/250/thumbnail_10.jpg';
+import thumbnail_11 from './../assets/250/thumbnail_11.jpg';
+import thumbnail_12 from './../assets/250/thumbnail_12.jpg';
+import thumbnail_13 from './../assets/250/thumbnail_13.jpg';
+import thumbnail_14 from './../assets/250/thumbnail_14.jpg';
+import thumbnail_15 from './../assets/250/thumbnail_15.jpg';
+import thumbnail_16 from './../assets/250/thumbnail_16.jpg';
+import thumbnail_17 from './../assets/250/thumbnail_17.jpg';
+import thumbnail_18 from './../assets/250/thumbnail_18.jpg';
+import thumbnail_19 from './../assets/250/thumbnail_19.jpg';
+import thumbnail_20 from './../assets/250/thumbnail_20.jpg';
 
 export const images: imagesType = {
   '01': {

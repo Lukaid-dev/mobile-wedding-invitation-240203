@@ -1,9 +1,10 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import Header from './header/Header';
 
-import KakaoInAppBrowserDetect from './KakaoInAppBrowserDetect';
+import KakaoInAppBrowserDetect from './utils/KakaoInAppBrowserDetect';
 import { useEffect, useState } from 'react';
-import { ImageProvider } from './contexts/ImageProvider';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { queryClient } from './utils/api';
 
 function App() {
   const [bg, setBg] = useState('');
@@ -22,9 +23,9 @@ function App() {
       <div className="flex items-center justify-center">
         <div className={`w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 ${bg}`}>
           <Header />
-          <ImageProvider>
+          <QueryClientProvider client={queryClient}>
             <Outlet />
-          </ImageProvider>
+          </QueryClientProvider>
         </div>
       </div>
     </KakaoInAppBrowserDetect>

@@ -1,5 +1,5 @@
-import { deleteGuestBookEntry } from '../../api';
-import { GBReturnCode } from '../../types';
+import { deleteGuestBookEntry, queryClient } from '../../utils/api';
+import { useMutation } from '@tanstack/react-query';
 
 export default function DeleteButton({
   id,
@@ -10,20 +10,24 @@ export default function DeleteButton({
   pw: string;
   closeModal: () => void;
 }) {
+  const { mutate, isError, error } = useMutation({
+    mutationFn: deleteGuestBookEntry,
+    onSuccess: async () => {
+      queryClient.invalidateQueries({
+        queryKey: ['guestbook'],
+      });
+      alert('삭제되었습니다.');
+    },
+  });
+
   const handleDelete = async () => {
-    const res: GBReturnCode = await deleteGuestBookEntry(id, pw);
-
-    if (res === GBReturnCode.PwEmpty) {
-      alert('비밀번호를 입력해주세요.');
-    }
-
-    if (res === GBReturnCode.PwInvalid) {
-      alert('비밀번호가 일치하지 않습니다.');
-    }
-
+    mutate({ id, pw });
     closeModal();
-    window.location.reload();
   };
+
+  if (isError) {
+    alert(error.message);
+  }
 
   return (
     <div className="flex justify-end">
