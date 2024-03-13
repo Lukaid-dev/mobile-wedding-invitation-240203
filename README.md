@@ -54,13 +54,14 @@
  ┃ ┣ 📜 fonts.css
  ┃ ┗ 📜 index.css
  ┣ 📂 utils
+ ┃ ┣ 📜 api.ts
+ ┃ ┣ 📜 firebase.ts
+ ┃ ┣ 📜 images.ts
+ ┃ ┣ 📜 KakaoInAppBrowserDetect.tsx
  ┃ ┣ 📜 password.ts
- ┃ ┗ 📜 timeBefore.ts
+ ┃ ┣ 📜 timeBefore.ts
+ ┃ ┗ 📜 types.ts
  ┣ 📜 App.tsx
- ┣ 📜 KakaoInAppBrowserDetect.tsx
- ┣ 📜 api.ts
- ┣ 📜 firebase.ts
- ┣ 📜 images.ts
  ┣ 📜 main.tsx
  ┗ 📜 router.tsx
 ```
