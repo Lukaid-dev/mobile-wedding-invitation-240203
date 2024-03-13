@@ -1,23 +1,24 @@
 import { useEffect, useRef, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
-import { DocumentData } from 'firebase/firestore';
 import DeleteModal from './DeleteModal';
 import BottomInputBar from './BottomInputBar';
 import CommentList from './CommentList';
-import { GuestBookEntry } from '../../utils/types';
-import { getGuestBookEntries } from '../../utils/api';
+import { getGuestBookEntries, queryClient } from '../../utils/api';
+import { useQuery } from '@tanstack/react-query';
 
 export default function GuestBook() {
-  const entries = useLoaderData() as GuestBookEntry[];
+  const { data, isPending, isError, error } = useQuery({
+    queryKey: ['guestbook'],
+    queryFn: getGuestBookEntries,
+  });
+
   const [guestbookEntryId, setGuestbookEntryId] = useState('');
-  const [guestbookEntries, setGuestbookEntries] = useState<DocumentData>([]);
 
   // modal
   const [modalOpen, setModalOpen] = useState(false);
   const modalOverlayRef = useRef<HTMLDivElement>(null);
 
   const [excludedHeight, setExcludedHeight] = useState<number>(0);
-  const ref = useRef<HTMLDivElement>(null);
+  const bottomInputBarRef = useRef<HTMLDivElement>(null);
 
   const openModal = (id: string) => {
     setGuestbookEntryId(id);
@@ -35,13 +36,9 @@ export default function GuestBook() {
   };
 
   useEffect(() => {
-    setGuestbookEntries(entries);
-  }, [entries]);
-
-  useEffect(() => {
     const handleResize = () => {
-      if (ref.current) {
-        const componentHeight = ref.current.offsetHeight;
+      if (bottomInputBarRef.current) {
+        const componentHeight = bottomInputBarRef.current.offsetHeight;
         const viewportHeight = window.innerHeight;
         const heightExcluded = viewportHeight - componentHeight;
         setExcludedHeight(heightExcluded);
@@ -56,27 +53,42 @@ export default function GuestBook() {
     };
   }, []);
 
-  return (
-    <>
-      <CommentList
-        guestbookEntries={guestbookEntries}
-        openModal={openModal}
-        excludedHeight={excludedHeight}
-      />
-      <BottomInputBar ref={ref} setGuestbookEntries={setGuestbookEntries} />
-      {modalOpen && (
-        <DeleteModal
-          modalOverlayRef={modalOverlayRef}
-          closeModal={closeModal}
-          modalOutsideClick={modalOutsideClick}
-          guestbookEntryId={guestbookEntryId}
+  if (isPending) {
+    console.log('pending');
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    console.log('error');
+    return <div>Error: {error.message}</div>;
+  }
+
+  if (data) {
+    return (
+      <>
+        <CommentList
+          guestbookEntries={data}
+          openModal={openModal}
+          excludedHeight={excludedHeight}
         />
-      )}
-    </>
-  );
+        <BottomInputBar ref={bottomInputBarRef} />
+        {modalOpen && (
+          <DeleteModal
+            modalOverlayRef={modalOverlayRef}
+            closeModal={closeModal}
+            modalOutsideClick={modalOutsideClick}
+            guestbookEntryId={guestbookEntryId}
+          />
+        )}
+      </>
+    );
+  }
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export async function loader() {
-  const entries = await getGuestBookEntries();
-  return entries;
+  return queryClient.fetchQuery({
+    queryKey: ['guestbook'],
+    queryFn: getGuestBookEntries,
+  });
 }

@@ -1,14 +1,3 @@
-export enum GBReturnCode {
-  Success = 'Success',
-  NameEmpty = 'NameEmpty',
-  PwEmpty = 'PwEmpty',
-  PwInvalid = 'PwInvalid',
-  TextEmpty = 'TextEmpty',
-  NetworkError = 'NetworkError',
-  IdEmpty = 'IdEmpty',
-  IdNotFound = 'IdNotFound',
-}
-
 export interface INavItem {
   url: string;
   title: string;

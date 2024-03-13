@@ -3,6 +3,8 @@ import Header from './header/Header';
 
 import KakaoInAppBrowserDetect from './utils/KakaoInAppBrowserDetect';
 import { useEffect, useState } from 'react';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { queryClient } from './utils/api';
 
 function App() {
   const [bg, setBg] = useState('');
@@ -21,7 +23,9 @@ function App() {
       <div className="flex items-center justify-center">
         <div className={`w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 ${bg}`}>
           <Header />
-          <Outlet />
+          <QueryClientProvider client={queryClient}>
+            <Outlet />
+          </QueryClientProvider>
         </div>
       </div>
     </KakaoInAppBrowserDetect>

@@ -1,6 +1,8 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
-import GuestBook, { loader } from './pages/GuestBook/GuestBook';
+import GuestBook, {
+  loader as guestBookLoader,
+} from './pages/GuestBook/GuestBook';
 import App from './App';
 import Invitation from './pages/Invitation/Invitation';
 import Gallery from './pages/Gallery/Gallery';
@@ -31,7 +33,7 @@ export const router = createBrowserRouter([
       {
         path: '/Guestbook',
         element: <GuestBook />,
-        loader: loader,
+        loader: guestBookLoader,
       },
     ],
   },

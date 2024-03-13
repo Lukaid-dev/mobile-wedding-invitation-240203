@@ -26,7 +26,7 @@ export default function DeleteModal({
         WebkitBackdropFilter: 'blur(2px)',
       }}
       onClick={modalOutsideClick}>
-      <div className="flex w-[90%] flex-col gap-6 rounded-2xl bg-white p-6">
+      <div className="flex w-4/5 flex-col gap-6 rounded-2xl bg-white p-6 sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3">
         <div className="flex items-center justify-between ">
           <div className="font-bold">삭제하시겠습니까?</div>
           <img src={x} alt="X" className="w-6" onClick={closeModal} />

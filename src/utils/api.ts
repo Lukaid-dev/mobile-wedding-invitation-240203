@@ -6,8 +6,11 @@ import {
   updateDoc,
 } from 'firebase/firestore';
 import { db } from './firebase';
-import { GuestBookEntry, GBReturnCode } from './types';
+import { GuestBookEntry } from './types';
 import { checkPassword, generatePassword } from './password';
+import { QueryClient } from '@tanstack/react-query';
+
+export const queryClient = new QueryClient();
 
 // GET
 export const getGuestBookEntries = async (): Promise<GuestBookEntry[]> => {
@@ -28,23 +31,21 @@ export const getGuestBookEntries = async (): Promise<GuestBookEntry[]> => {
 };
 
 // POST
-export const postGuestBookEntry = async (
-  entry: GuestBookEntry,
-): Promise<GBReturnCode> => {
+export const postGuestBookEntry = async (entry: GuestBookEntry) => {
   if (!entry.name) {
-    return GBReturnCode.NameEmpty;
+    throw new Error('이름을 입력해주세요');
   }
 
   if (!entry.pw) {
-    return GBReturnCode.PwEmpty;
+    throw new Error('비밀번호를 입력해주세요');
   }
 
   if (entry.pw.trim().length !== 4) {
-    return GBReturnCode.PwInvalid;
+    throw new Error('비밀번호는 4글자를 입력해야합니다.');
   }
 
   if (!entry.text) {
-    return GBReturnCode.TextEmpty;
+    throw new Error('메세지를 입력해주세요.');
   }
 
   const { hashedPassword, salt } = generatePassword(entry.pw);
@@ -59,27 +60,30 @@ export const postGuestBookEntry = async (
   const guestbookCollection = collection(db, 'GuestBook');
   const res = await addDoc(guestbookCollection, entryWithHashedPassword);
   if (res) {
-    return GBReturnCode.Success;
+    return;
   } else {
-    return GBReturnCode.NetworkError;
+    throw new Error('방명록 작성에 실패했습니다.');
   }
 };
 
 // DELETE
-export const deleteGuestBookEntry = async (
-  id: string,
-  pw: string,
-): Promise<GBReturnCode> => {
+export const deleteGuestBookEntry = async ({
+  id,
+  pw,
+}: {
+  id: string;
+  pw: string;
+}) => {
   if (!id) {
-    return GBReturnCode.IdEmpty;
+    throw new Error('잘못된 요청입니다.');
   }
 
   if (!pw) {
-    return GBReturnCode.PwEmpty;
+    throw new Error('비밀번호를 입력해주세요');
   }
 
   if (pw.trim().length !== 4) {
-    return GBReturnCode.PwInvalid;
+    throw new Error('비밀번호는 4글자를 입력해야합니다.');
   }
 
   const guestbookCollection = collection(db, 'GuestBook');
@@ -90,7 +94,7 @@ export const deleteGuestBookEntry = async (
   })[0];
 
   if (!entry) {
-    return GBReturnCode.IdNotFound;
+    throw new Error('해당하는 방명록이 없습니다.');
   }
 
   const isPasswordCorrect = checkPassword(
@@ -100,7 +104,7 @@ export const deleteGuestBookEntry = async (
   );
 
   if (!isPasswordCorrect) {
-    return GBReturnCode.PwInvalid;
+    throw new Error('비밀번호가 일치하지 않습니다.');
   }
 
   const ref = doc(db, 'GuestBook', entry.id);
@@ -109,6 +113,4 @@ export const deleteGuestBookEntry = async (
   await updateDoc(ref, {
     deletedAt: new Date().toISOString(),
   });
-
-  return GBReturnCode.Success;
 };

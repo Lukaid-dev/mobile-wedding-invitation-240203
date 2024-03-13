@@ -1,4 +1,3 @@
-import { DocumentData } from 'firebase/firestore';
 import { GuestBookEntry } from '../../utils/types';
 import Card from './Card';
 
@@ -7,7 +6,7 @@ export default function CommentList({
   openModal,
   excludedHeight,
 }: {
-  guestbookEntries: DocumentData;
+  guestbookEntries: GuestBookEntry[];
   openModal: (id: string) => void;
   excludedHeight: number;
 }) {
