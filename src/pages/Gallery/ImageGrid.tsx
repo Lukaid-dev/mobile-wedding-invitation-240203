@@ -46,7 +46,7 @@ export default function ImageGrid() {
       <div key={idx} className={`flex w-[100vw] justify-center`}>
         <img
           src={images[key].main}
-          className="w-[80vw]"
+          className="sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2"
           alt={`Photo ${idx + 1}`}
           onLoad={() => {
             loadCount++;
@@ -62,6 +62,7 @@ export default function ImageGrid() {
       </div>
     ));
     setModalImage(imageLists);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
