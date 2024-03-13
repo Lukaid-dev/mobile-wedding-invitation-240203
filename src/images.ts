@@ -22,28 +22,6 @@ import thumbnail_18 from './assets/250/thumbnail_18.jpg';
 import thumbnail_19 from './assets/250/thumbnail_19.jpg';
 import thumbnail_20 from './assets/250/thumbnail_20.jpg';
 
-// Main
-// import main_01 from './assets/1000/main_01.jpg';
-// import main_02 from './assets/1000/main_02.jpg';
-// import main_03 from './assets/1000/main_03.jpg';
-// import main_04 from './assets/1000/main_04.jpg';
-// import main_05 from './assets/1000/main_05.jpg';
-// import main_06 from './assets/1000/main_06.jpg';
-// import main_07 from './assets/1000/main_07.jpg';
-// import main_08 from './assets/1000/main_08.jpg';
-// import main_09 from './assets/1000/main_09.jpg';
-// import main_10 from './assets/1000/main_10.jpg';
-// import main_11 from './assets/1000/main_11.jpg';
-// import main_12 from './assets/1000/main_12.jpg';
-// import main_13 from './assets/1000/main_13.jpg';
-// import main_14 from './assets/1000/main_14.jpg';
-// import main_15 from './assets/1000/main_15.jpg';
-// import main_16 from './assets/1000/main_16.jpg';
-// import main_17 from './assets/1000/main_17.jpg';
-// import main_18 from './assets/1000/main_18.jpg';
-// import main_19 from './assets/1000/main_19.jpg';
-// import main_20 from './assets/1000/main_20.jpg';
-
 export const images: imagesType = {
   '01': {
     thumbnail: thumbnail_01,

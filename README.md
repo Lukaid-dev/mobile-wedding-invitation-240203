@@ -41,8 +41,6 @@
  ┣ 📂 components
  ┃ ┣ 📜 Divider.tsx
  ┃ ┗ 📜 NextButton.tsx
- ┣ 📂 contexts
- ┃ ┗ 📜 ImageProvider.tsx - 이미지를 동적으로 관리하는 것이 아니라 폐기
  ┣ 📂 header
  ┣ 📂 hooks
  ┃ ┗ 📜 useKakaoInAppBrowserDetect.ts - 카카오 인앱 브라우저 감지 및 기본브라우저로 이동

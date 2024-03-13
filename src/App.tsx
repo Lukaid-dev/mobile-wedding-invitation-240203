@@ -3,7 +3,6 @@ import Header from './header/Header';
 
 import KakaoInAppBrowserDetect from './KakaoInAppBrowserDetect';
 import { useEffect, useState } from 'react';
-import { ImageProvider } from './contexts/ImageProvider';
 
 function App() {
   const [bg, setBg] = useState('');
@@ -22,9 +21,7 @@ function App() {
       <div className="flex items-center justify-center">
         <div className={`w-full sm:w-2/3 md:w-1/2 lg:w-2/5 xl:w-1/3 ${bg}`}>
           <Header />
-          <ImageProvider>
-            <Outlet />
-          </ImageProvider>
+          <Outlet />
         </div>
       </div>
     </KakaoInAppBrowserDetect>

@@ -1,11 +1,10 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import GuestBook, { loader } from './pages/GuestBook/GuestBook';
 import App from './App';
 import Invitation from './pages/Invitation/Invitation';
 import Gallery from './pages/Gallery/Gallery';
 import NotFound from './pages/NotFound';
-import Landing from './pages/Landing';
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +14,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Landing />,
+        element: <Navigate to="/Home" />,
       },
       {
         path: '/Home',

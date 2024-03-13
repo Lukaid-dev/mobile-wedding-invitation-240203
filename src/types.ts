@@ -1,10 +1,3 @@
-export enum RouterContextEnum {
-  Home = 'Home',
-  Invitation = 'Invitation',
-  Gallery = 'Gallery',
-  GuestBook = 'GuestBook',
-}
-
 export enum GBReturnCode {
   Success = 'Success',
   NameEmpty = 'NameEmpty',
@@ -14,11 +7,6 @@ export enum GBReturnCode {
   NetworkError = 'NetworkError',
   IdEmpty = 'IdEmpty',
   IdNotFound = 'IdNotFound',
-}
-
-export interface RouterContextInterface {
-  router: RouterContextEnum;
-  updateRouter: (router: RouterContextEnum) => void;
 }
 
 export interface INavItem {
