@@ -7,7 +7,7 @@ import {
 } from 'firebase/firestore';
 import { db } from './firebase';
 import { GuestBookEntry, GBReturnCode } from './types';
-import { checkPassword, generatePassword } from './utils/password';
+import { checkPassword, generatePassword } from './password';
 
 // GET
 export const getGuestBookEntries = async (): Promise<GuestBookEntry[]> => {

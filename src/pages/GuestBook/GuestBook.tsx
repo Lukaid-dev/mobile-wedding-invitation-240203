@@ -4,8 +4,8 @@ import { DocumentData } from 'firebase/firestore';
 import DeleteModal from './DeleteModal';
 import BottomInputBar from './BottomInputBar';
 import CommentList from './CommentList';
-import { GuestBookEntry } from '../../types';
-import { getGuestBookEntries } from '../../api';
+import { GuestBookEntry } from '../../utils/types';
+import { getGuestBookEntries } from '../../utils/api';
 
 export default function GuestBook() {
   const entries = useLoaderData() as GuestBookEntry[];

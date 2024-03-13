@@ -1,6 +1,6 @@
 import { useState, forwardRef } from 'react';
-import { GBReturnCode, GuestBookEntry } from '../../types';
-import { getGuestBookEntries, postGuestBookEntry } from '../../api';
+import { GBReturnCode, GuestBookEntry } from '../../utils/types';
+import { getGuestBookEntries, postGuestBookEntry } from '../../utils/api';
 import { DocumentData } from 'firebase/firestore';
 
 import arrowUpWhite from '../../assets/arrowUpWhite.svg';

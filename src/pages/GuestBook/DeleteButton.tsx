@@ -1,5 +1,5 @@
-import { deleteGuestBookEntry } from '../../api';
-import { GBReturnCode } from '../../types';
+import { deleteGuestBookEntry } from '../../utils/api';
+import { GBReturnCode } from '../../utils/types';
 
 export default function DeleteButton({
   id,

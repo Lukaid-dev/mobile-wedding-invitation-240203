@@ -1,5 +1,5 @@
 import { DocumentData } from 'firebase/firestore';
-import { GuestBookEntry } from '../../types';
+import { GuestBookEntry } from '../../utils/types';
 import Card from './Card';
 
 export default function CommentList({

@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import ImageModal from './ImageModal';
-import { images } from '../../images';
+import { images } from '../../utils/images';
 
 export default function ImageGrid() {
   // images

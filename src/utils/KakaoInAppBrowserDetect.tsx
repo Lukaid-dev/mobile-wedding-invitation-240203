@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import useKakaoInAppBrowserDetect from './hooks/useKakaoInAppBrowserDetect';
+import useKakaoInAppBrowserDetect from '../hooks/useKakaoInAppBrowserDetect';
 import { useEffect } from 'react';
 
 const KakaoInAppBrowserDetect: React.FC<PropsWithChildren> = ({ children }) => {

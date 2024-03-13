@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import Header from './header/Header';
 
-import KakaoInAppBrowserDetect from './KakaoInAppBrowserDetect';
+import KakaoInAppBrowserDetect from './utils/KakaoInAppBrowserDetect';
 import { useEffect, useState } from 'react';
 
 function App() {
